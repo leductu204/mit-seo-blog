@@ -22,10 +22,28 @@ Rút từ kinh nghiệm viết bài #1 "Video AI Nhảy TikTok" và #2 "Kling AI
 > **Quy tắc:** Luôn verify giá trước khi viết. Không đoán "miễn phí" nếu chưa chắc. Gói Free có credits không có nghĩa là dùng được.
 > **Tính số video:** Đem credits chia cho khung 30-80 credits/video (tùy model) để ước tính.
 
-## 3. Ảnh — Ít Nhưng Chất
+## 3. Ảnh — Quy Tắc Ngón Tay Cái
 
-### Nguyên tắc:
-- **3-4 ảnh/bài** là đủ cho bài how-to ngắn. **4-6 ảnh** OK cho bài review/tutorial dài (nếu mỗi ảnh minh họa 1 bước/feature cụ thể)
+### Số lượng ảnh theo loại bài:
+
+| Loại bài | Số từ | Số ảnh lý tưởng |
+|---|---|---|
+| How-to ngắn | 1000-1500 từ | 3-4 ảnh |
+| Review / Tutorial dài | 2000-3000 từ | 4-6 ảnh |
+| Pillar content / Bài main | 3000+ từ | 5-8 ảnh |
+
+**Quy tắc ngón tay cái:** Cứ khoảng **300-500 từ nên có 1 ảnh** để phá vỡ wall-of-text và giữ người đọc cuộn tiếp. Google đánh giá cao bài viết có ảnh minh họa đúng chỗ (đặc biệt khi ảnh có alt text keyword-rich).
+
+### Kinh nghiệm SEO về ảnh:
+- **Mỗi ảnh phải có mục đích rõ ràng** — minh họa 1 bước, 1 feature, hoặc 1 so sánh cụ thể. Không nhét ảnh "cho đẹp"
+- **Alt text chứa keyword** — mỗi ảnh nên có alt text mô tả nội dung + keyword liên quan (VD: "Giao diện tạo video AI trên Trạm Sáng Tạo")
+- **Ảnh đầu tiên (cover) cực kỳ quan trọng** — Google Image Search lấy ảnh này làm thumbnail, nên phải sạch text, đúng chủ đề, realistic
+- **Đặt tên file có nghĩa** — `tst-video-workspace.png` tốt hơn `image_001.png` (Google đọc filename)
+- **Tránh ảnh quá nặng** — resize về 600-800px width, dùng optimize=True khi save PNG. Ảnh >200KB sẽ kéo page speed xuống
+- **Phân bố đều trong bài** — không dồn 5 ảnh ở đầu rồi để trống 2000 từ cuối. Rải đều theo tỉ lệ 300-500 từ/ảnh
+- **Caption ảnh (chữ nghiêng dưới ảnh)** giúp tăng thời gian đọc. Format: `*Mô tả ngắn ảnh — nhấn mạnh USP hoặc pain point.*`
+
+### Nguyên tắc chung:
 - Ưu tiên ảnh thật (screenshot UI, thumbnail YouTube) hơn ảnh AI-generated
 - Ảnh AI-generated phải **realistic, người giống thật** — không ảo/cyberpunk/neon
 - Ảnh trùng (cover = YouTube thumbnail) → OK, tăng brand consistency
@@ -41,6 +59,54 @@ Rút từ kinh nghiệm viết bài #1 "Video AI Nhảy TikTok" và #2 "Kling AI
 - Ảnh AI kiểu holographic/neon/fantasy → người Việt không chuộng
 - Infographic AI-generated → nội dung thường trùng với text, thừa
 - Logo SVG link ngoài → hay bị lỗi, chụp screenshot thay thế
+
+## 3.5. Video Embed — Tăng Dwell Time & Rich Snippet
+
+### Tại sao phải embed video?
+- **Tăng dwell time** — Google coi thời gian ở trang là tín hiệu chất lượng. Bài có video người đọc ở lâu hơn 2-3 phút
+- **Rich snippet trên SERP** — bài có video có thể hiển thị thumbnail video trên kết quả tìm kiếm, tăng CTR 15-30%
+- **Google Video tab** — bài có embed YouTube xuất hiện ở tab Video của Google Search (traffic miễn phí)
+- **Giảm bounce rate** — người đọc dừng lại xem video thay vì thoát ngay
+
+### Số lượng video theo loại bài:
+
+| Loại bài | Số video lý tưởng |
+|---|---|
+| How-to ngắn | 1 video (demo hoặc hướng dẫn) |
+| Review / Tutorial dài | 1-2 video |
+| Pillar content / Bài main | 2-3 video |
+
+### Nguồn video (ưu tiên từ trên xuống):
+1. **Video từ trang chính thức** — Kling, Veo, Seedance thường có showcase/demo video trên kênh YouTube chính thức, authoritative nhất
+2. **YouTube Trạm Sáng Tạo** — video hướng dẫn từ kênh chính thức, embed để tăng view kênh
+3. **YouTube reviewer** — review từ creator khác, dùng kèm credit
+4. **TikTok / Reels viral** — video demo trending, embed bằng link hoặc screenshot
+5. **Video tự tạo** — record screen demo trên TST, upload YouTube rồi embed
+
+### Format embed trong Markdown:
+
+**YouTube (khuyến nghị nhất):**
+```markdown
+[![Tên video mô tả](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+*Xem video hướng dẫn chi tiết trên YouTube.*
+```
+
+**Hoặc iframe trực tiếp (nếu platform hỗ trợ):**
+```html
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+```
+
+### Quy tắc đặt video:
+- **Video đầu tiên** đặt gần đầu bài (sau intro hoặc sau section 1) — above the fold tăng engagement
+- **Không đặt 2 video liền nhau** — phải có ít nhất 300-500 từ text giữa 2 video
+- **Mỗi video phải có caption** giải thích nội dung: `*Xem video hướng dẫn tạo video AI trên Trạm Sáng Tạo.*`
+- **Ưu tiên click-to-play thumbnail** hơn auto-embed iframe — giữ page speed nhanh
+- **Luôn ghi credit** nếu dùng video của người khác: `*Nguồn: Tên kênh YouTube*`
+
+### Video KHÔNG nên dùng:
+- Video quá dài (>15 phút) — người đọc blog không xem hết, thêm timestamp nếu bắt buộc
+- Video không liên quan trực tiếp đến bài viết — nhét cho có sẽ tăng bounce rate
+- Video tự host (mp4 trực tiếp) — nặng bandwidth, không được Google index như YouTube
 
 ## 4. Cấu Trúc Bài SEO
 
