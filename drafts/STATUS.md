@@ -1,7 +1,7 @@
 # Trạng Thái Các Bài Draft
 
 > Mở file này để biết bài nào xong, bài nào cần bổ sung.
-> Cập nhật lần cuối: 28/03/2026
+> Cập nhật lần cuối: 03/04/2026
 
 ## ✅ Hoàn Thành
 
@@ -16,16 +16,16 @@
 | 8 | [Seedance AI Review](./seedance-ai-review/) | ~1800 | 4 | 1 (YT) |
 | 9 | [Cách Tạo Video AI Từ Ảnh](./cach-tao-video-ai-tu-anh/) | ~3200 | 6 | 0 |
 | 10 | [Tạo Ảnh AI Miễn Phí](./tao-anh-ai-mien-phi/) | ~2800 | 4 | 0 |
+| 11 | [Veo 3 Review](./veo3-review/) | ~2500 | 4 | 1 (YT) |
+| 12 | [Cách Tạo Video AI Dài Đồng Nhất](./video-ai-dai-dong-nhat/) | ~1000 | 3 | 0 |
+| 13 | [Kling 3.0 vs 2.5](./kling3-vs-kling25/) | ~1200 | 2 | 0 |
 
 ## 🔧 Cần Bổ Sung
 
 | # | Bài | Việc cần làm |
 |---|---|---|
-| 9 | [Cách Tạo Video AI Từ Ảnh](./cach-tao-video-ai-tu-anh/) | ⬜ Bổ sung step-by-step screenshots (đăng ký → nạp MoMo → chọn model → upload ảnh → tạo video → download) |
+| 9 | [Cách Tạo Video AI Từ Ảnh](./cach-tao-video-ai-tu-anh/) | ⬜ Bổ sung step-by-step screenshots |
 
 ## 📋 Chưa Viết (Keyword Clusters Còn Lại)
 
-- [ ] Video dài / đồng nhất ("cách tạo video dài đồng nhất bằng AI")
-- [ ] Veo 3 review riêng ("veo3 là gì", "veo3 review tiếng việt")
-- [ ] Kling 3.0 vs 2.5 chi tiết
-- [ ] Video hát nhép AI (tách riêng từ post 1)
+*(Đã hoàn thành toàn bộ queue)*

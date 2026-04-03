@@ -29,7 +29,8 @@ import requests
 
 # ── Config ────────────────────────────────────────────────
 
-API_BASE = os.environ.get("API_BASE", "http://localhost:8000")
+# API_BASE = os.environ.get("API_BASE", "http://localhost:8000")
+API_BASE = os.environ.get("API_BASE", "https://api.tramsangtao.com")
 ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN", "")
 
 # Interactive: prompt for token if not set
@@ -86,9 +87,11 @@ def parse_frontmatter(content: str) -> tuple:
     return meta, body
 
 
-def upload_image(filepath: str, session: requests.Session) -> str:
-    """Upload image to R2 via admin API. Returns URL."""
+def upload_image(filepath: str, session: requests.Session, prefix: str = "") -> str:
+    """Upload image to R2 via admin API. Returns URL. prefix used to avoid filename collisions."""
     filename = os.path.basename(filepath)
+    if prefix:
+        filename = f"{prefix}_{filename}"
     with open(filepath, "rb") as f:
         resp = session.post(
             f"{API_BASE}/api/admin/blog/upload-image",
@@ -100,7 +103,7 @@ def upload_image(filepath: str, session: requests.Session) -> str:
     return resp.json().get("url", "")
 
 
-def replace_image_refs(content: str, folder: str, session: requests.Session) -> tuple:
+def replace_image_refs(content: str, folder: str, session: requests.Session, slug: str = "") -> tuple:
     """Find ./image.png refs in markdown, upload to R2, replace URLs. Returns (new_content, cover_url)."""
     cover_url = ""
 
@@ -125,7 +128,7 @@ def replace_image_refs(content: str, folder: str, session: requests.Session) -> 
         if filepath in uploaded_cache:
             url = uploaded_cache[filepath]
         else:
-            url = upload_image(filepath, session)
+            url = upload_image(filepath, session, prefix=slug)
             uploaded_cache[filepath] = url
             if url:
                 print(f"  ✓ Uploaded: {rel_path} → {url[:60]}...")
@@ -144,7 +147,7 @@ def replace_image_refs(content: str, folder: str, session: requests.Session) -> 
         if cover_path in uploaded_cache:
             cover_url = uploaded_cache[cover_path]
         else:
-            cover_url = upload_image(cover_path, session)
+            cover_url = upload_image(cover_path, session, prefix=slug)
 
     return new_content, cover_url
 
@@ -204,7 +207,7 @@ def import_folder(drafts_dir: str):
         print(f"📝 Importing: {slug}")
 
         # Upload images and replace refs
-        body, cover_url = replace_image_refs(body, folder, session)
+        body, cover_url = replace_image_refs(body, folder, session, slug=slug)
 
         # Map pillar → category
         pillar = str(meta.get("pillar", ""))
