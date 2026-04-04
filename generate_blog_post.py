@@ -433,7 +433,26 @@ async def generate_post(
             print(f"  ✅ /blog/{seo.get('slug')}")
             return result
         else:
-            print(f"  ✅ Done (no publish): {seo.get('slug')}")
+            # Save to drafts/ folder
+            import pathlib
+            slug = seo.get('slug', 'untitled')
+            out_dir = pathlib.Path(__file__).parent / "drafts" / slug
+            out_dir.mkdir(parents=True, exist_ok=True)
+            out_file = out_dir / "index.md"
+            fm_tags = "\n".join(f"  - {t}" for t in (seo.get('tags') or []))
+            frontmatter = f"""---
+title: "{seo.get('title', keyword)}"
+slug: "{slug}"
+meta_title: "{seo.get('meta_title', keyword[:60])}"
+meta_description: "{seo.get('meta_description', keyword[:160])}"
+tags:
+{fm_tags}
+status: {status}
+---
+
+"""
+            out_file.write_text(frontmatter + content, encoding="utf-8")
+            print(f"  ✅ Done (saved): drafts/{slug}/index.md")
             return post
 
 
