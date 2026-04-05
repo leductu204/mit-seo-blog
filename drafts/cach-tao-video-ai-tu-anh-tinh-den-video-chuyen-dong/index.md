@@ -18,6 +18,19 @@ status: draft
 
 ## Intro
 
+<iframe width="100%" class="aspect-video mt-4 mb-8 rounded-lg shadow-lg" src="https://www.youtube.com/embed/bIgtrveSh1M" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
 Bạn có một ảnh sản phẩm, ảnh chân dung, hoặc ảnh phong cảnh — và bạn muốn nó *chuyển động*.
 
 Không phải để flex công nghệ. Mà vì video đang ăn hết traffic của ảnh tĩnh trên mọi nền tảng — TikTok, Reels, thậm chí Facebook feed. Một ảnh sản phẩm đứng yên bị scroll qua trong 0.3 giây. Một video 5 giây từ chính ảnh đó? Cơ hội còn lại lâu hơn nhiều.
@@ -31,6 +44,19 @@ Bài này dạy bạn chính xác quy trình tạo video AI từ ảnh có sẵn
 ---
 
 ## Prerequisites — Chuẩn Bị Trước Khi Bắt Đầu
+
+![Minh họa 0](./thumb_M4qpxZ7Mqtg.jpg)
+
+
+
+
+
+
+
+
+
+
+
 
 Đừng bỏ qua phần này. 80% video ra tệ là do ảnh đầu vào tệ — không phải do model.
 
@@ -52,6 +78,18 @@ Model không đọc được suy nghĩ. Bạn cần biết mình muốn *phần 
 ---
 
 ## Các Bước Thực Hiện
+
+![Minh họa 1](./thumb_bEL3TuXUGOc.jpg)
+
+
+
+
+
+
+
+
+
+
 
 ### Bước 1: Chọn Model Phù Hợp Với Mục Đích
 
@@ -157,6 +195,17 @@ Nhấn **Generate**. Tùy độ phức tạp, video sẽ xử lý trong 1–5 ph
 
 ## Kết Quả Mong Đợi — Trông Như Thế Nào Khi Làm Đúng
 
+![Minh họa 2](./photo_to_video_magic_1775383310437.png)
+
+
+
+
+
+
+
+
+
+
 Khi quy trình đúng, video output của bạn sẽ:
 
 - **Giữ nguyên nhận dạng** của chủ thể — sản phẩm trông đúng như trong ảnh gốc, mặt người không bị biến dạng
@@ -169,6 +218,17 @@ Nếu video của bạn đạt 3/4 tiêu chí trên ở lần generate đầu ti
 ---
 
 ## Troubleshooting — 3 Lỗi Phổ Biến
+
+![Minh họa 3](./thumb_LUF56HURU5c.jpg)
+
+
+
+
+
+
+
+
+
 
 ### Lỗi 1: Mặt người bị méo, biến dạng giữa chừng
 
@@ -201,6 +261,24 @@ Nếu video của bạn đạt 3/4 tiêu chí trên ở lần generate đầu ti
 - Thêm vào đầu prompt: *"stay true to the original image"*, *"no new elements added"*
 - Kiểm tra lại ảnh gốc — có vùng nào blur hay noise nặng không? Model hay "tưởng tượng" vào những vùng đó
 - Thử generate lại với seed khác (nếu platform hỗ trợ)
+
+---
+
+---
+
+## 📈 Case Study: Biến Ảnh Tĩnh Thành Video "Triệu View" Bán Hàng Shopee Affiliate
+
+Một nhà sáng tạo nội dung chuyên làm Affiliate cho mảng Decor (trang trí nhà cửa) trên TikTok gặp rào cản về việc không có tiền nhập mẫu sẵn:
+- **Pain Point:** Phải lấy ảnh tiệm bán hàng trên Taobao/1688 về ghép thành slide nhạc. Kiểu nội dung này bị TikTok bóp tương tác nặng vì đánh dấu là "Slideshow/Low-quality content".
+- **Giải Pháp:** Sử dụng tính năng Image-to-Video của Kling 3.0. Bạn tải 1 tấm ảnh góc làm việc có setup đèn LED xịn từ shop. Đưa vào Kling với prompt: *"Soft warm light glowing from the LED lamp, camera slow panning from left to right, dust particles in the air, cozy aesthetic."*
+- **Kết Quả & ROI:** Từ 1 tấm ảnh tĩnh đơn điệu, Kling tạo ra một góc phòng 3D sâu thẳm, ánh sáng lung linh huyền ảo với bụi bay lơ lửng. Người xem tưởng bạn tự setup góc quay thật chứ không phải ảnh tải từ mạng xuống. Thay vì làm Slideshow xàm chán, bạn ghép 4 video quay cận này lại. Tỷ lệ giữ chân người xem tăng gấp 3, kéo theo tỷ lệ nhấp vào Link Bio mua hàng cực kỳ ấn tượng.
+
+---
+
+## 💎 Pro-Tips: Sống Sót Khỏi Nhạc "Nước Cất" Khi Biến Ảnh Thành Video
+
+1. **Làm Chủ Padding & Cropping:** Đừng để AI tự động cắt mất mặt nhân vật! Nếu ảnh gốc là hình vuông 1:1, nhưng bạn muốn video TikTok 9:16, hãy mở Canva hoặc Photoshop, tự tay "bù thêm" viền xung quanh ảnh (Padding) thành khung 9:16 bằng các công cụ Generative Fill hoặc ghép màu trơn. AI sẽ hiểu và render hoàn hảo.
+2. **Kỹ Thuật "Nâng Cấp Ánh Sáng":** Bạn có 1 tấm ảnh chụp bằng điện thoại ngoài trời hơi tối tăm? Đừng chỉnh sáng bằng App! Hãy đưa thẳng vào Seedance 2.0 hoặc Kling, và thêm vào prompt cụm từ: *"Professional studio lighting, volumetric light, cinematic golden hour"*. AI không chỉ cho ảnh chuyển động mà còn thay luôn dàn "đèn chiếu bóng" chuyên nghiệp vào video cho bạn.
 
 ---
 

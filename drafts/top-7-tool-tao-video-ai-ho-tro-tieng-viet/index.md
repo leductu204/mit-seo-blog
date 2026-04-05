@@ -18,11 +18,26 @@ status: draft
 
 ## Sora đã "chết" — và đó là tin tốt cho bạn
 
+<iframe width="100%" class="aspect-video mt-4 mb-8 rounded-lg shadow-lg" src="https://www.youtube.com/embed/bIgtrveSh1M" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
 OpenAI khai tử Sora giữa chừng vì chi phí vận hành quá cao và cạnh tranh quá khốc liệt. Kết quả? Cuộc đua tạo video AI bùng nổ, và người dùng Việt Nam đang được hưởng lợi từ một loạt tool ngon hơn, rẻ hơn, thực tế hơn.
 
 ---
 
 ## Tại sao bạn cần đọc bài này ngay lúc này
+
+![Minh họa 0](./thumb_v9ZCJ3KyTWE.jpg)
+
+
+
+
+
 
 Content video đang chiếm 82% lưu lượng internet toàn cầu. Với người làm affiliate, marketer hay content creator Việt Nam, câu hỏi không còn là *"có nên dùng AI video không"* — mà là *"dùng tool nào để không mất tiền oan?"*
 
@@ -31,6 +46,12 @@ Vấn đề lớn nhất: phần lớn tool tạo video AI được build cho th
 ---
 
 ## 7 Tool Tạo Video AI — Đánh Giá Thật, Không Hoa Mỹ
+
+![Minh họa 1](./thumb_Kf_ZCXkOlXY.jpg)
+
+
+
+
 
 ---
 
@@ -143,7 +164,41 @@ Grok của xAI có thể tạo video, hiểu tiếng Việt cơ bản, và tích
 
 ---
 
+---
+
+## ❓ FAQ — Gỡ Rối Nhanh Cho Content Tiếng Việt
+
+![Minh họa 2](./thumb_q2sOKckCDtY.jpg)
+
+
+
+**1. Kling và Veo 3 có hiểu Prompt (câu lệnh) bằng Tiếng Việt không?**
+Cả hai model này đều hỗ trợ tiếng Việt ở mức độ "tầm trung". Nếu bạn viết: `"Một cô gái mặc áo dài đang đi bộ trên bờ hồ Hoàn Kiếm"`, chúng hiểu rất tốt. Nhưng nếu bạn dùng từ lóng, cụm từ vựng phức tạp, AI sẽ nhầm lẫn. Lời khuyên: Hãy dùng Prompt Tiếng Anh để có kết quả chính xác 100%.
+
+**2. Tool nào hỗ trợ Auto-Subtitle (Phụ đề mảng tự động) tiếng Việt chính xác nhất?**
+Thực tế, ngay cả CapCut Pro hay HeyGen cũng có độ sai lệch từ 10-15% khi nghe giọng vùng miền (như giọng miền Trung, miền Tây). Bạn luôn luôn phải check lại Subtitle thủ công trước khi xuất file.
+
+**3. Tool nào lồng tiếng (Voice-over) Tiếng Việt tự nhiên nhất?**
+Để Voice-over nghe "giống người" nhất hiện tại (có ngắt nghỉ, cảm xúc, không bị ngang), ElevenLabs hoặc Vbee là sự kết hợp hoàn hảo cùng với Video sinh ra từ Kling hoặc Veo 3. Đừng dùng AI Text-to-Speech miễn phí trên mạng, chúng khiến video của bạn trông rất "Rác".
+
+---
+
+## 💎 Pro-Tips: Workflow Bất Bại Cho Người Việt Làm Video AI
+
+![Minh họa 3](./thumb_M8_ZI9OMi0M.jpg)
+
+
+
+1. **Giai Đoạn Kịch Bản:** Dùng ChatGPT (GPT-4) hoặc Claude 3 để viết kịch bản bằng Tếng Việt, sau đó yêu cầu chúng dịch luôn qua Prompt Tiếng Anh (bao gồm Camera Angles, Lighting, Subject).
+2. **Giai Đoạn Hình Ảnh/Video:** Copy Prompt Tiếng Anh đổ vào Kling 2.5/2.6 hoặc Veo 3 trên TramSangTao để render phôi Video.
+3. **Giai Đoạn Giọng Đọc (Voice):** Ném file Script tiếng Việt vào ElevenLabs để thu về file `.mp3` chất giọng bản địa.
+4. **Giai Đoạn Lắp Ráp, Nhép Môi (Tuỳ chọn):** Quăng file MP3 và Video vào HeyGen để cho nhân vật nhép miệng (Lip-sync), sau đó bỏ vào CapCut auto-capption là xong một sản phẩm triệu view.
+
+---
+
 ## Takeaway: Pattern Chung Từ 7 Tool Này
+
+
 
 Sau khi nhìn tổng thể, có 3 điều rõ ràng:
 
@@ -159,6 +214,8 @@ Veo 3 ngon, nhưng nếu bạn đang làm TikTok affiliate với ngân sách $50
 ---
 
 ## Thử Ngay Trên Trạm Sáng Tạo
+
+
 
 Kling 2.5, 2.6, 3.0 và Veo 3 đều có trên **[tramsangtao.com](https://tramsangtao.com)** — không cần tạo tài khoản riêng từng platform, không cần VPN, thanh toán bằng VNĐ.
 

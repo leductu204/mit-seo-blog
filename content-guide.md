@@ -1,6 +1,6 @@
 # Content Guide — Trạm Sáng Tạo SEO Blog
 
-Rút từ kinh nghiệm viết bài #1 "Video AI Nhảy TikTok" và #2 "Kling AI Review". Dùng file này làm checklist mỗi khi viết/review bài mới.
+Rút từ kinh nghiệm viết và augment 26 bài SEO (Phase 1→5). Dùng file này làm checklist mỗi khi viết/review bài mới.
 
 ---
 
@@ -43,22 +43,29 @@ Rút từ kinh nghiệm viết bài #1 "Video AI Nhảy TikTok" và #2 "Kling AI
 - **Phân bố đều trong bài** — không dồn 5 ảnh ở đầu rồi để trống 2000 từ cuối. Rải đều theo tỉ lệ 300-500 từ/ảnh
 - **Caption ảnh (chữ nghiêng dưới ảnh)** giúp tăng thời gian đọc. Format: `*Mô tả ngắn ảnh — nhấn mạnh USP hoặc pain point.*`
 
-### Nguyên tắc chung:
-- Ưu tiên ảnh thật (screenshot UI, thumbnail YouTube) hơn ảnh AI-generated
-- Ảnh AI-generated phải **realistic, người giống thật** — không ảo/cyberpunk/neon
-- Ảnh trùng (cover = YouTube thumbnail) → OK, tăng brand consistency
-- **Luôn resize ảnh cho hợp lý:** width 600-800px (dùng PIL/Pillow). Ảnh gốc lớn > 1000px phải resize xuống
+### Chiến Thuật Mix Ảnh & Media (Rule Chốt Kỷ Tị 2026):
+Để tránh bài viết bị "nhàm chán" hay "giả trân", rổ tài nguyên cho 1 bài viết Seo sẽ áp dụng theo chiến thuật Mix sau:
+1. **1 Cover Image (Ảnh bìa):** Ưu tiên sử dụng YouTube HD Thumbnail thực tế (vi text giật tít tốt, đảm bảo CTR rất cao).
+2. **1 Video Iframe:** Nhúng video YouTube (hướng dẫn/review) ngay trong phần đầu hoặc bước quan trọng để tối đa hóa Dwell Time (thời gian ở lại trang).
+3. **2 Ảnh Inline Cào Từ Web/Youtube:** Screenshot giao diện thực tế hoặc bòn rút từ YouTube Thumbnails tạo góc nhìn thân thiện cho người dùng.
+4. **1-2 Ảnh AI-Generated:** Cực kì cẩn trọng trong Prompting. Phải bám sát checklist bên dưới.
+5. **Shuffle Tự Nhiên:** Khi nhúng vào framework markdown, sử dụng `random.shuffle()` hoặc xếp đan xen ngẫu nhiên để ảnh do AI sinh ra không bị tập trung chỉ vào 1 chỗ.
 
-### Loại ảnh nên dùng:
-1. **Cover/thumbnail:** Dùng thumbnail YouTube thật nếu có, hoặc ảnh từ site/user cung cấp
-2. **Screenshot UI:** Chụp thật từ tramsangtao.com — menu, settings, model selector, kết quả
-3. **Screenshot đối thủ:** Lấy từ website chính thức (vào trang chụp/browser screenshot)
-4. **YouTube embed:** Thumbnail click-to-play, không auto-embed video
+**💎 Tỷ lệ Vàng "8 Ảnh + 2 Video" chuyên biệt cho Master Guide (Bài Pillar 3000+ từ):**
+- 1 Ảnh Cover thu hút Traffic.
+- 2 Videos (1 Video overview ở đầu bài, 1 Video hướng dẫn ngách ở các section kỹ thuật sâu).
+- 2 Ảnh AI-Generated (Minimalist) đặt ở các đoạn "lý thuyết chữ chay" mệt người (như đoạn Viết Prompt, Báo giá tính toán) để tạo khoảng nghỉ thị giác (visual breathing space).
+- 3-4 Ảnh Web UI / Screenshot thực tế phân bổ ở các phần hướng dẫn thực hành/workflow.
+- Công thức lõi: Giữ đúng nhịp "Trung bình 400 từ = 1 cụm Media" để phá hoàn toàn bức tường chữ (Wall of Text) và đè bẹp Bounce Rate.
 
-### Loại ảnh KHÔNG nên dùng:
-- Ảnh AI kiểu holographic/neon/fantasy → người Việt không chuộng
-- Infographic AI-generated → nội dung thường trùng với text, thừa
-- Logo SVG link ngoài → hay bị lỗi, chụp screenshot thay thế
+### Checklist Cốt Lõi Khi Tạo Ảnh AI (AI Generated Images):
+- **BẮT BUỘC:** Phong cách **"Clean & Minimalist"** — tông màu pastel thanh lịch (trắng, beige/kem). Ánh sáng thiên về ban mai tự nhiên (soft morning light). Motif thường là: lifestyle bàn làm việc gọn gàng, sảnh văn phòng thoáng đãng, thiết bị tối giản. Định hướng phải trông sang trọng như các công ty công nghệ / Tech Blog lớn (The Verge, TechCrunch).
+- **CẤM KỴ:** Tuyệt đối KHÔNG prompt thêm hiệu ứng "công nghệ viễn tưởng", "neon lights", màu mè "xanh đỏ tím vàng", cyberpunk, holographic. Ảnh "công nghệ quá đà" mang lại tác dụng ngược ở thị trường Việt Nam năm 2026.
+
+### Kỹ Thuật Tối Ưu (Technical SEO):
+- **Luôn resize/compress ảnh:** width dao động 600-800px. Nén Save for Web (JPEG/WebP) thay vì ảnh PNG AI > 2MB khổng lồ! Trọng lượng ảnh ép < 200KB.
+- **Tên file thân thiện:** Tên file chứa keyword theo chuẩn slug `ten-tool-tao-video.jpg`. Thay thế hoàn toàn tên rác kiểu `image_001.png`.
+- **Alt text:** Ảnh luôn có Alt text đúng ngữ nghĩa của đoạn văn, thay thế cho từ khóa nhồi nhét.
 
 ## 3.5. Video Embed — Tăng Dwell Time & Rich Snippet
 
@@ -190,3 +197,207 @@ H1: Tiêu đề chứa keyword chính + năm
 | Tính video = credits / giá cố định | Chia theo khung 30-80 credits/video |
 | Tính toán Aff sai | 1 video ~1k VND. Đơn Affiliate hoa hồng mốc: 10k-20k/đơn |
 | Tạo URL nội bộ ảo (vd /blog/tts) | Link về trang gốc có thật (vd `/video`) |
+
+## 8. Case Study — Công Thức Đã Chạy Tốt
+
+Mỗi bài nên có 1 section **Case Study** trước khi vào FAQ/Kết luận. Đây là section có engagement cao nhất vì biến kiến thức thành câu chuyện.
+
+**Format chuẩn (3 phần, tổng 150-250 từ):**
+
+```
+## 📈 Case Study: [Ai] Dùng [Tool Gì] Để [Đạt Kết Quả Gì]
+
+[1 dòng giới thiệu nhân vật + ngữ cảnh]
+- **Pain Point:** [Vấn đề cụ thể, có số liệu chi phí/thời gian]
+- **Giải Pháp:** [Workflow cụ thể trên tramsangtao.com, mention model + prompt mẫu nếu có]
+- **Kết Quả & ROI:** [Số liệu before/after, chi phí tiết kiệm, tăng trưởng]
+```
+
+**Các persona đã dùng (đừng lặp lại):**
+
+| Persona | Dùng cho bài | ROI chính |
+|---------|-------------|-----------|
+| Tiệm trà sữa Đà Nẵng | kling-2-5 | 15 clip từ 5 ảnh smartphone |
+| Freelancer Shopee creative | review-kling-ai | Giảm 3-4h → 30 phút/bộ |
+| Shop thời trang 200+ SKU | tao-anh-ai-mien-phi | Giảm 15tr → 500k/tháng |
+| Admin TikTok tâm lý | khong-can-lo-mat | 200k followers, 20k/video |
+| Agency 3 người TMĐT | lam-video-tu-dong | 15 → 50 video/tuần |
+| Marketer chạy FB ads | khong-can-quay | 30 video/tuần, ROAS +35% |
+| Startup D2C Hà Nội | cach-dung-ai-tao-video-tiktok | 3 triệu view TikTok/tháng |
+| Photographer chuyển AI | cach-tao-video-ai-tu-anh | 40% doanh thu mới từ video |
+
+**Quy tắc viết Case Study:**
+- **Nhân vật phải cụ thể** — "1 freelancer" tốt hơn "người dùng". Thêm địa danh VN (Đà Nẵng, TP.HCM) tăng relatability
+- **Pain Point chứa số liệu** — "tốn 3 triệu/buổi quay" cụ thể hơn "tốn nhiều tiền"
+- **Giải Pháp phải mention tramsangtao.com** — đây là CTA ngầm, không cần push mạnh
+- **ROI = before vs after** — luôn có 2 con số so sánh (chi phí cũ vs chi phí mới, thời gian cũ vs mới)
+- **Không dùng lại persona đã dùng** — check bảng trên trước khi viết
+
+## 9. Pro-Tips — Công Thức "Mẹo Người Trong Nghề"
+
+Mỗi bài nên có 1 section **Pro-Tips** với 2-3 mẹo cụ thể. Đây là section có share cao nhất vì reader bookmark/screenshot để dùng sau.
+
+**Format chuẩn:**
+
+```
+## 💎 Pro-Tips: [Tiêu đề hấp dẫn, kiểu "Bí kíp..." hoặc "Mẹo..."]
+
+1. **[Tên mẹo ngắn gọn]:** [Giải thích 2-3 câu, kèm ví dụ prompt hoặc workflow cụ thể]
+2. **[Tên mẹo ngắn gọn]:** [Giải thích 2-3 câu]
+```
+
+**Các chủ đề Pro-Tips đã dùng (đừng lặp lại):**
+
+| Chủ đề | Dùng trong bài |
+|--------|---------------|
+| Test rẻ (2.5) → Render đắt (3.0) | kling-2-5 |
+| "Product photography style" keyword | kling-2-5 |
+| Chê Kling đúng chỗ, chọn đúng tool | review-kling-ai |
+| Character consistency bằng ảnh reference | review-kling-ai |
+| Combo Gemini brainstorm + FLUX render | tao-anh-ai-mien-phi |
+| "shot on Canon 5D..." keyword | tao-anh-ai-mien-phi |
+| Visual Signature cố định | khong-can-lo-mat |
+| Giọng thật tốt hơn TTS | khong-can-lo-mat |
+| Template Prompt Library (Google Sheet) | lam-video-tu-dong |
+| "3 giây đầu quyết định" | lam-video-tu-dong |
+| Batch generate rồi review hàng loạt | khong-can-quay |
+| "Last 2 seconds rule" - cắt 2 giây cuối | khong-can-quay |
+| Negative Prompt trick | kling-ai-vs-veo-3, kling-3-0 |
+
+**Quy tắc viết Pro-Tips:**
+- **Mẹo phải actionable ngay** — reader đọc xong phải apply được trong 5 phút
+- **Kèm prompt mẫu nếu liên quan** — viết bằng tiếng Anh, in nghiêng trong dấu *...*
+- **Mỗi mẹo tối đa 3 câu** — ngắn gọn, dễ screenshot
+- **Không trùng với nội dung chính bài** — Pro-Tips là "bonus", không phải tóm tắt bài
+
+## 10. Internal Linking — Bản Đồ Liên Kết Nội Bộ
+
+Đây là điểm yếu nhất hiện tại. Mỗi bài nên link sang 2-3 bài liên quan. Dưới đây là mapping đã xác nhận:
+
+**Cluster 1: Kling (8 bài)**
+
+```
+cach-dang-ky-kling-ai (entry point)
+  → kling-ai-la-gi (overview)
+  → kling-ai-gia-bao-nhieu (pricing)
+  → kling-ai-co-mien-phi (free tier)
+  → kling-2-5-la-gi (v2.5 deep dive)
+  → kling-2-6-vs-kling-3-0 (version compare)
+  → kling-3-0-la-gi (v3.0 deep dive)
+  → review-kling-ai-tieng-viet (review tổng hợp)
+  → huong-dan-dung-kling-ai-tieng-viet (tutorial)
+```
+
+**Cluster 2: So sánh tools (5 bài)**
+
+```
+top-7-tool-tao-video-ai (pillar)
+  → kling-ai-so-voi-cac-tool
+  → kling-vs-sora-2025
+  → kling-ai-vs-veo-3
+  → 6-app-tao-video-ai
+  → so-sanh-video-ai (nếu có)
+```
+
+**Cluster 3: Workflow/How-to (6 bài)**
+
+```
+cach-tao-video-ngan-bang-ai (entry point)
+  → lam-video-ai-tu-dong
+  → lam-video-ai-khong-can-lo-mat
+  → tao-video-ai-khong-can-quay
+  → cach-dung-ai-tao-video-tiktok
+  → cach-tao-video-ai-tu-anh
+```
+
+**Cluster 4: Model-specific (4 bài)**
+
+```
+veo-3-la-gi
+sora-2-la-gi
+sora-2-danh-gia-tu-goc-nhin
+seedance (trong bài kling-ai-vs-veo-3)
+```
+
+**Cluster 5: Ảnh AI (2 bài)**
+
+```
+tao-anh-ai-mien-phi
+flux-vs-stable-diffusion
+```
+
+**Cách link tự nhiên trong bài:**
+- "Nếu bạn chưa có tài khoản, xem [hướng dẫn đăng ký Kling AI từng bước](/blog/cach-dang-ky-kling-ai)."
+- "So sánh chi tiết hơn giữa Kling 2.6 và 3.0 tại [bài viết chuyên sâu](/blog/kling-2-6-vs-kling-3-0)."
+- Đặt internal link trong flow tự nhiên, không dồn hết vào cuối bài
+
+## 11. Prompt Mẫu Trong Bài — Quy Tắc Vàng
+
+Prompt mẫu là phần được copy-paste nhiều nhất. Viết đúng = reader quay lại.
+
+**Format chuẩn:**
+- Viết prompt bằng **tiếng Anh** (AI models xử lý tiếng Anh tốt hơn)
+- In nghiêng trong dấu *...*
+- Kèm giải thích tiếng Việt ngay dưới, từng phần
+
+**Ví dụ tốt:**
+> *"Close-up of a bubble tea cup, condensation drops sliding down the glass, straw slowly being pulled up, soft café background, warm afternoon light, shallow depth of field."*
+>
+> Phân tích: `Close-up` = góc cận, `condensation drops` = giọt nước đọng (chi tiết nhỏ tạo realism), `shallow depth of field` = xóa phông nhẹ.
+
+**Các keyword "ma thuật" đã test hiệu quả:**
+- Camera: `cinematic`, `slow dolly`, `push in`, `aerial descending`
+- Ánh sáng: `golden hour`, `warm afternoon light`, `soft studio lighting`
+- Chất lượng: `film grain`, `natural skin texture`, `shot on Canon 5D`
+- Style: `product photography`, `lifestyle mockup`, `minimalist`
+- Tránh: `4K`, `ultra HD`, `masterpiece` (không thực sự cải thiện output)
+
+## 12. Domain & URL — Bẫy Đã Gặp
+
+Các lỗi domain/URL cần check định kỳ:
+
+| Sai | Đúng | Lý do |
+|-----|------|-------|
+| klingai.com | kling.ai | Kling đã migrate domain (2025) |
+| tramsangtao.com/blog/xyz | /blog/[slug] | Verify slug tồn tại trước khi link |
+| Link đến pricing page cũ | tramsangtao.com/pricing | Pricing page hay thay đổi, check link sống |
+| sora.com | openai.com/sora | Sora không có domain riêng |
+
+**Quy tắc URL:**
+- Mỗi khi nhắc đến tool bên ngoài, **verify URL bằng cách mở thử** trước khi viết
+- Nếu tool thay đổi domain → grep toàn bộ drafts để sửa hàng loạt: `grep -rl "domain_cu" drafts/`
+- Internal link dùng relative path (`/blog/slug`) thay vì absolute (`https://tramsangtao.com/blog/slug`)
+
+## 13. Anti-Truncation — Tránh Bài Bị Cụt
+
+Qua 26 bài, có 3 bài bị truncated (file kết thúc giữa chừng). Nguyên nhân: AI generate nội dung quá dài, bị cắt khi save.
+
+**Checklist sau khi viết bài:**
+- [ ] File kết thúc bằng section hoàn chỉnh (CTA hoặc Kết luận)
+- [ ] Dòng cuối cùng không bị cắt giữa chừng (không kết thúc bằng "đ", "và", "nhưng"...)
+- [ ] Section cuối có ít nhất 2-3 câu hoàn chỉnh
+- [ ] Mở file, scroll xuống cuối cùng để verify bằng mắt
+
+**Nếu phát hiện bài bị cụt:**
+1. Xác định section cuối đang viết dở
+2. Hoàn thành section đó
+3. Thêm Case Study + Pro-Tips nếu chưa có
+4. Thêm CTA/Kết luận
+
+## 14. Cập Nhật Giá & Model Mới
+
+AI tools thay đổi rất nhanh. Cứ 2-4 tuần nên review lại:
+
+**Check list cập nhật:**
+- [ ] Kling có version mới không? (hiện tại: 2.5, 2.6, 3.0)
+- [ ] Veo có update không? (hiện tại: Veo 3)
+- [ ] Sora có mở rộng access không? (hiện tại: Plus $20/tháng)
+- [ ] Giá tramsangtao có thay đổi không?
+- [ ] Có tool mới nào đáng viết bài không?
+- [ ] Domain nào đã thay đổi? (dùng `grep -rl` để tìm)
+
+**Model đang có trên tramsangtao (tính đến 04/2026):**
+- Video: Kling 2.5, Kling 2.6, Kling 3.0, Veo 3, Seedance 1.0
+- Ảnh: FLUX, Nano Banana Pro, Stable Diffusion
+- Đặc biệt: Virtual Try-On (Nano Banana), Image-to-Video (Kling)
+

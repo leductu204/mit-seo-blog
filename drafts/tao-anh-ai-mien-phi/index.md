@@ -24,6 +24,14 @@ Nhưng "miễn phí" trong thế giới AI ảnh 2026 thường có nghĩa là *
 
 ## 7 App Tạo Ảnh AI Đẹp Nhất 2026
 
+<iframe width="100%" class="aspect-video mt-4 mb-8 rounded-lg shadow-lg" src="https://www.youtube.com/embed/bIgtrveSh1M" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
 ### 1. FLUX 2 Pro (Stability AI)
 
 **Loại:** Text-to-Image chất lượng cao
@@ -51,7 +59,7 @@ Nhưng "miễn phí" trong thế giới AI ảnh 2026 thường có nghĩa là *
 ### 4. Kling O1 Image
 
 **Loại:** Text-to-Image từ Kuaishou (nhà phát triển Kling AI)
-**Free tier:** ⚠️ 66 credits miễn phí/ngày trên klingai.com nhưng **ảnh dính watermark Kling**. Bỏ watermark cần gói trả phí
+**Free tier:** ⚠️ 66 credits miễn phí/ngày trên kling.ai nhưng **ảnh dính watermark Kling**. Bỏ watermark cần gói trả phí
 **Điểm mạnh:** Phong cách đa dạng, xử lý layout phức tạp tốt, hỗ trợ in-painting
 **Phù hợp:** Ảnh poster, ảnh ghép nhiều nhân vật, ảnh concept
 
@@ -81,6 +89,14 @@ Nhưng "miễn phí" trong thế giới AI ảnh 2026 thường có nghĩa là *
 
 ## So Sánh Nhanh 7 Công Cụ
 
+![Minh họa 0](./thumb_vQGFfZfikRA.jpg)
+
+
+
+
+
+
+
 | Công cụ | Free tier | Watermark? | Chất lượng | Dùng trên TST |
 | --- | --- | --- | --- | --- |
 | **FLUX 2 Pro** | Giới hạn | ⚠️ Có (trên một số nền tảng) | ⭐⭐⭐⭐⭐ | ✅ Không watermark |
@@ -96,6 +112,13 @@ Nhưng "miễn phí" trong thế giới AI ảnh 2026 thường có nghĩa là *
 ---
 
 ## Cách Viết Prompt Tạo Ảnh AI — Hướng Dẫn Chi Tiết
+
+![Minh họa 1](./thumb_9UWdFwLuIho.jpg)
+
+
+
+
+
 
 Prompt quyết định 90% chất lượng ảnh AI. Cùng model, người viết prompt giỏi sẽ ra ảnh khác hoàn toàn so với người viết sơ sài.
 
@@ -152,6 +175,12 @@ Prompt quyết định 90% chất lượng ảnh AI. Cùng model, người viế
 
 ## 5 Ứng Dụng Thực Tế Của Ảnh AI
 
+![Minh họa 2](./thumb_GBev4GrKkv4.jpg)
+
+
+
+
+
 ### 1. Ảnh Sản Phẩm Cho Shop Online
 
 ![Biến ảnh sản phẩm thường thành ảnh chuyên nghiệp bằng AI](./product_before_after.png)
@@ -194,6 +223,12 @@ Thay vì dùng ảnh stock lặp lại nhàm chán, tạo ảnh minh họa uniqu
 
 ## FAQ — Câu Hỏi Thường Gặp
 
+![Minh họa 3](./thumb_tgoioOHITXc.jpg)
+
+
+
+
+
 ### Tạo ảnh AI miễn phí ở đâu tốt nhất?
 
 Nếu chỉ cần ảnh nhanh, miễn phí hoàn toàn: **Google Gemini** (không giới hạn, prompt tiếng Việt). Nếu cần chất lượng cao hơn: **Freepik** (3-5 ảnh/ngày) hoặc **Trạm Sáng Tạo** gói 99k (2000 credits ≈ 250 ảnh).
@@ -213,6 +248,22 @@ Có, hầu hết các model (FLUX, Nano Banana, Kling O1) đều cho phép dùng
 ### 1.000 credits trên Trạm Sáng Tạo tạo được bao nhiêu ảnh?
 
 Khoảng **250 ảnh** (mỗi ảnh tiêu tốn ~4 credits). Gói Starter 99k = 2.000 credits ≈ 500 ảnh. Nếu cần ảnh không giới hạn, gói **Image Basic 149k/tháng** (unlimited Freepik, Gemini, Imagen, Seedream, FLUX 2 Pro, Kling O1).
+
+---
+
+## 📈 Case Study: Shop Quần Áo Dùng AI Thay Photographer, Tiết Kiệm 15 Triệu/Tháng
+
+Một shop thời trang online trên Shopee có 200+ SKU cần chụp ảnh mỗi tháng:
+- **Pain Point:** Thuê photographer + model + studio tốn 15-20 triệu/tháng. Ảnh chụp xong nếu không bán được thì coi như vứt tiền.
+- **Giải Pháp:** Dùng Nano Banana Pro trên tramsangtao.com tạo ảnh người mẫu mặc đồ (virtual try-on concept). Kết hợp FLUX để tạo ảnh sản phẩm flat-lay trên các bề mặt đẹp (đá marble, gỗ vintage). Mỗi sản phẩm cần 3-5 ảnh, tổng 600-1000 ảnh/tháng.
+- **Kết Quả & ROI:** Chi phí giảm từ 15 triệu xuống còn chưa tới 500k tiền credit/tháng. Thời gian xử lý 200 sản phẩm giảm từ 2 tuần xuống còn 2 ngày. Và bất ngờ: ảnh AI có tỷ lệ click cao hơn ảnh studio truyền thống 20% vì ánh sáng và góc máy luôn nhất quán, trông "xịn" hơn.
+
+---
+
+## 💎 Pro-Tips: Mẹo "Chen Ngang" Để Có Ảnh AI Chất Lượng Cao Miễn Phí
+
+1. **Combo Gemini + FLUX:** Dùng Google Gemini (miễn phí, không giới hạn) để brainstorm và test nhanh ý tưởng prompt. Khi đã tìm được prompt ưng ý, copy sang FLUX trên tramsangtao để render bản chất lượng cao không watermark. Cách này giúp bạn không tốn credit vào giai đoạn thử sai.
+2. **Keyword "shot on [tên máy ảnh]" là vũ khí bí mật:** Thêm cụm *"shot on Canon 5D Mark IV, 85mm f/1.4"* hoặc *"shot on Hasselblad"* vào cuối prompt sẽ khiến AI tự động áp dụng depth of field, bokeh, và color science của dòng máy đó. Ảnh ra trông như chụp bằng máy ảnh thật chứ không phải AI.
 
 ---
 

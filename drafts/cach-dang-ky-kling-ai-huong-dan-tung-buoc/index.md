@@ -18,6 +18,17 @@ status: draft
 
 ## Intro
 
+<iframe width="100%" class="aspect-video mt-4 mb-8 rounded-lg shadow-lg" src="https://www.youtube.com/embed/rP2VsvuKe5k" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
+
+
+
 Bạn đã nghe về Kling AI — công cụ tạo video AI đang được Bloomberg nhắc tên cùng với Runway như một trong những đối thủ nặng ký nhất sau khi Sora bị OpenAI khai tử. Và bạn muốn thử.
 
 Vấn đề là: giao diện tiếng Anh, thanh toán quốc tế, không biết bắt đầu từ đâu. Nhiều người dừng lại ở bước đăng ký.
@@ -36,6 +47,17 @@ Bài này giải quyết đúng cái đó.
 
 ## Prerequisites — Chuẩn Bị Trước Khi Làm
 
+![Minh họa 0](./thumb_ZEAnYnH8hSo.jpg)
+
+
+
+
+
+
+
+
+
+
 Đừng bắt đầu nếu thiếu những thứ này. Mất 5 phút kiểm tra, tiết kiệm 30 phút xử lý lỗi sau đó.
 
 - **Email hoạt động được** — Gmail khuyến khích, tránh email công ty có filter chặn mail nước ngoài
@@ -47,9 +69,20 @@ Bài này giải quyết đúng cái đó.
 
 ## Các Bước Đăng Ký
 
+![Minh họa 1](./thumb_XBWgLgVmd4Y.jpg)
+
+
+
+
+
+
+
+
+
+
 ### Bước 1: Vào đúng địa chỉ
 
-Truy cập **klingai.com**.
+Truy cập **kling.ai**.
 
 Nghe đơn giản, nhưng đây là bước nhiều người làm sai đầu tiên — gõ "Kling AI" lên Google, click vào link quảng cáo hoặc trang clone, rồi thắc mắc sao giao diện trông lạ.
 
@@ -131,9 +164,20 @@ Khi thanh toán:
 
 ## Kết Quả Mong Đợi
 
+![Minh họa 2](./kling_registration_concept_1775383244816.png)
+
+
+
+
+
+
+
+
+
+
 Khi làm đúng, đây là những gì bạn thấy:
 
-✅ Đăng nhập được vào dashboard tại klingai.com  
+✅ Đăng nhập được vào dashboard tại kling.ai  
 ✅ Thấy số credits trong tài khoản  
 ✅ Submit được một prompt và thấy job đang chạy (trạng thái "Processing" hoặc "Generating")  
 ✅ Nhận được output đầu tiên — dù prompt test đơn giản đến mức nào
@@ -143,6 +187,17 @@ Nếu bạn thấy cả 4 điều trên → xong. Tài khoản sạch, sẵn sà
 ---
 
 ## Troubleshooting — 3 Lỗi Phổ Biến
+
+![Minh họa 3](./thumb_7BPupSVUDFc.jpg)
+
+
+
+
+
+
+
+
+
 
 ### Lỗi 1: Không nhận được email xác nhận
 
@@ -174,6 +229,37 @@ Nếu bạn thấy cả 4 điều trên → xong. Tài khoản sạch, sẵn sà
 1. Gọi hotline ngân hàng hoặc bật trong app mobile banking → cho phép thanh toán quốc tế online
 2. Thử lại sau 10 phút
 3. Nếu vẫn lỗi → dùng Wise Virtual Card (tạo tài khoản Wise, nạp USD, lấy số thẻ ảo để thanh toán)
+
+---
+
+## 💡 Pro-Tips: Mẹo Tối Ưu Credit Kling AI Dành Cho Người Mới
+
+Khi mới đăng ký, bạn sẽ được thưởng một lượng credit miễn phí có giới hạn. Đừng lãng phí chúng vào những thao tác test vô nghĩa. Dưới đây là chiến thuật sử dụng khôn ngoan nhất:
+
+### 1. Test Bằng Image-to-Video Thay Vì Text-to-Video
+Text-to-Video thường mất nhiều lần gen để tạo ra nhân vật hoặc bối cảnh đúng ý. Hãy dùng công cụ tạo ảnh (Midjourney, ChatGPT, hoặc công cụ tạo ảnh của Kling) để lấy ra một bức ảnh gốc chuẩn 100% rồi dùng tính năng **Image-to-Video**. Cách này giúp bạn kiểm soát hoàn toàn đầu ra, đỡ tốn credit làm lại.
+
+### 2. Ưu Tiên Model 1.0 (Standard) Cho Bước Lên Ý Tưởng
+Kling có các model mới như 1.5 hoặc PRO tiêu tốn lượng credits lớn hơn. Nếu bạn chỉ đang test Animation (chuyển động của camera, nhịp điệu ánh sáng), hãy chọn Model cũ hoặc chất lượng Standard. Khi đã ưng chuyển động, hãy dùng upscaler hoặc tạo lại bằng PRO.
+
+### 3. Tận Dụng Tính Năng "Motion Brush" (Cọ Chuyển Động)
+Kling khác biệt nhờ tính năng cho phép bạn vẽ hướng di chuyển trực tiếp lên ảnh. Hãy thành thạo tính năng này thay vì gõ text một cách mù quáng. Việc vẽ chính xác sẽ giảm thiểu 80% rủi ro AI cho đối tượng chuyển động sai lệch so với kỳ vọng.
+
+---
+
+## ❓ FAQ - Câu Hỏi Thường Gặp Khi Đăng Ký Kling AI
+
+**1. Đăng ký Kling AI có bắt buộc phải liên kết thẻ nội địa trung quốc không?**
+Không. Cập nhật mới nhất từ phiên bản toàn cầu (Global) tại `kling.ai` cho phép người dùng đăng ký hoàn toàn qua Email hoặc tài khoản Google mà không cần Số điện thoại hoặc Thẻ ngân hàng Trung Quốc.
+
+**2. Tôi có thể dùng Kling AI trên điện thoại di động không?**
+Có. Giao diện Web của Kling AI tương thích khá tốt với Mobile Browser (Safari/Chrome). Tuy nhiên, để điều khiển các tính năng nâng cao như Motion Brush, trải nghiệm trên Máy tính (Desktop/Laptop) vẫn chuyên nghiệp và nhanh gọn hơn nhiều.
+
+**3. Mất bao lâu để xử lý xong một video 5 giây?**
+Với tài khoản Free, thời gian chờ có thể xếp hàng (queue) từ 2 đến 10 phút tùy độ quá tải của Server. Nếu nâng cấp lên gói Pro, kết quả xử lý ưu tiên thường trả về trong chưa tới 60 giây.
+
+**4. Kling AI có hỗ trợ xuất video 1080p hoặc 4K không?**
+Bản miễn phí sẽ giới hạn độ phân giải ở mức cơ bản (thường là 720p). Bạn có thể dùng các tool như Topaz Video AI để upscale, hoặc mua gói trả phí của Kling để xuất thẳng kết quả 1080p siêu nét.
 
 ---
 

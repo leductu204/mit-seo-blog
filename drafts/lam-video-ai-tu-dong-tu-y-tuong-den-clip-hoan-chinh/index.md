@@ -18,6 +18,14 @@ status: draft
 
 ## Intro — Bài này dạy gì, mất bao lâu, cần gì?
 
+<iframe width="100%" class="aspect-video mt-4 mb-8 rounded-lg shadow-lg" src="https://www.youtube.com/embed/bIgtrveSh1M" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
 Hãy thành thật với nhau một chút: bạn không cần học After Effects. Bạn không cần thuê editor. Và bạn **chắc chắn không cần ngồi 8 tiếng để làm một video 30 giây**.
 
 Bài này sẽ đi thẳng vào quy trình làm video AI tự động — từ lúc có ý tưởng mờ nhạt trong đầu đến khi xuất ra clip dùng được cho content, affiliate, hay quảng cáo sản phẩm. Không lý thuyết. Không marketing tech.
@@ -32,6 +40,13 @@ Bài này sẽ đi thẳng vào quy trình làm video AI tự động — từ l
 ---
 
 ## Prerequisites — Chuẩn bị trước khi bắt tay vào làm
+
+![Minh họa 0](./thumb_rqDTuS_-5WQ.jpg)
+
+
+
+
+
 
 Đừng bỏ qua phần này vì tưởng nó nhàm. Nhiều người thất bại ở bước đầu tiên chỉ vì bỏ qua chuẩn bị.
 
@@ -56,6 +71,12 @@ Video này dùng để làm gì? Quảng cáo sản phẩm affiliate? Short-form
 ---
 
 ## Steps — Quy Trình Làm Video AI Tự Động
+
+![Minh họa 1](./thumb_Oa98oXJ0Iu4.jpg)
+
+
+
+
 
 ### Bước 1: Xây dựng Prompt — Đây là 80% thành công của bạn
 
@@ -179,6 +200,12 @@ Trước khi upload, chạy qua danh sách này (mất 5 phút):
 
 ## Kết Quả Mong Đợi — Trông Như Thế Nào Khi Làm Đúng?
 
+![Minh họa 2](./thumb_M4qpxZ7Mqtg.jpg)
+
+
+
+
+
 Khi bạn đi đúng quy trình:
 
 - **Video 15–30 giây:** Hình ảnh nhất quán, không bị nhảy cảnh đột ngột, nhân vật không bị "biến hình" giữa clip
@@ -193,6 +220,12 @@ Lần đầu làm, kỳ vọng ra được **2–3 clip dùng được** trong s
 
 ## Troubleshooting — 3 Lỗi Phổ Biến Nhất
 
+![Minh họa 3](./thumb_Kf_ZCXkOlXY.jpg)
+
+
+
+
+
 ### Lỗi 1: Tay/ngón tay nhân vật bị biến dạng
 
 **Triệu chứng:** Nhân vật có 6 ngón tay, ngón tay bị xoắn, tay "tan chảy" khi di chuyển.
@@ -204,4 +237,47 @@ Lần đầu làm, kỳ vọng ra được **2–3 clip dùng được** trong s
 
 ---
 
-### Lỗi 2: Video
+### Lỗi 2: Video trông "nhựa", màu sắc giả tạo
+
+**Triệu chứng:** Video ra đủ chi tiết nhưng skin tone trông như plastic, ánh sáng quá đều, thiếu "hồn".
+
+**Fix:**
+- Thêm cụm *"film grain, natural skin texture, imperfect lighting"* vào prompt — AI đang cố tạo hình ảnh "quá hoàn hảo", và đây là cách khiến nó bớt hoàn hảo đi (tức là trông thật hơn)
+- Color grade nhẹ sau khi export — giảm saturation 10-15%, tăng contrast 5%, thêm warm tone. Chỉ 30 giây trong CapCut nhưng khác biệt rất lớn
+
+---
+
+### Lỗi 3: Prompt chạy tốt lần 1, nhưng lần 2 ra kết quả hoàn toàn khác
+
+**Triệu chứng:** Cùng prompt, cùng model, nhưng output mỗi lần một kiểu.
+
+**Fix:**
+- Đây là bản chất của AI video — có yếu tố random (seed). Chấp nhận rằng cần generate 2-3 lần cho mỗi clip
+- Nếu model có option **"seed"**, giữ nguyên seed để output ổn định hơn
+- Dùng ảnh keyframe (Image-to-Video) thay vì text-only sẽ giảm đáng kể sự ngẫu nhiên
+
+---
+
+## 📈 Case Study: Agency Nhỏ Tạo 50 Video/Tuần Cho 10 Khách Hàng
+
+Một agency 3 người tại TP.HCM chuyên làm content cho các shop TMĐT nhỏ:
+- **Pain Point:** Mỗi khách cần 5-10 video/tuần, nhưng quay bằng điện thoại trông nghiệp dư, thuê quay thì lỗ vốn vì khách chỉ trả 500k-1 triệu/tháng.
+- **Giải Pháp:** Build một workflow chuẩn trên tramsangtao.com: Ảnh sản phẩm → FLUX keyframe → Kling 2.5 animate (test) → Kling 2.6 render final. Tạo template prompt cho mỗi ngành (beauty, thực phẩm, thời trang) để reuse. 1 người chạy tool, 1 người edit CapCut, 1 người QC + đăng bài.
+- **Kết Quả & ROI:** Từ 15 video/tuần (quay thủ công) lên 50+ video/tuần. Doanh thu agency tăng gấp 3 nhờ nhận thêm khách mà không cần tuyển thêm người. Chi phí credit tramsangtao khoảng 1-2 triệu/tháng, trong khi doanh thu từ khách hàng là 8-10 triệu/tháng.
+
+---
+
+## 💎 Pro-Tips: "Template Prompt" — Vũ Khí Bí Mật Của Những Người Làm Video Nhanh
+
+1. **Tạo Prompt Library cho riêng mình:** Mỗi khi có 1 prompt cho kết quả tốt, lưu lại vào Google Sheet kèm ảnh output. Sau 1-2 tuần, bạn sẽ có một "kho prompt" cá nhân — mỗi lần làm video mới chỉ cần modify vài từ thay vì viết lại từ đầu.
+2. **Quy tắc "3 giây đầu quyết định tất cả":** Clip AI đầu tiên trong video phải hook ngay lập tức. Dùng prompt với camera movement mạnh cho clip đầu: *"dramatic zoom in"*, *"fast dolly forward"*, *"aerial descending shot"*. Các clip sau mới dùng chuyển động nhẹ nhàng hơn.
+
+---
+
+## Bắt Đầu Ngay
+
+Bạn không cần biết edit video. Bạn không cần camera. Bạn chỉ cần 1 ý tưởng rõ ràng và 20 phút trên [tramsangtao.com](https://tramsangtao.com).
+
+Quy trình: Viết prompt → Tạo keyframe bằng FLUX → Generate video bằng Kling/Veo3 → Thêm voiceover + subtitle bằng CapCut → Publish. Mất khoảng 15-20 phút cho mỗi video từ lần thứ hai trở đi.
+
+Xem bảng giá và bắt đầu tại **[tramsangtao.com/pricing](https://tramsangtao.com/pricing)**.

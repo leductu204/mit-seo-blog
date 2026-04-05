@@ -26,6 +26,9 @@ import re
 import json
 import glob
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ── Config ────────────────────────────────────────────────
 

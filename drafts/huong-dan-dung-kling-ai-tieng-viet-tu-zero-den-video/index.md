@@ -18,6 +18,14 @@ status: draft
 
 ## Intro
 
+<iframe width="100%" class="aspect-video mt-4 mb-8 rounded-lg shadow-lg" src="https://www.youtube.com/embed/rP2VsvuKe5k" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
 Kling AI đang là model tạo video AI được nhắc đến nhiều nhất trong cộng đồng content creator Việt Nam — và không phải ngẫu nhiên. Nó tạo ra video có chuyển động tự nhiên, giữ được nhân vật nhất quán, và quan trọng hơn: **nó chạy được trên tramsangtao.com mà không cần VPN, không cần thẻ nước ngoài**.
 
 Bài này không phải overview lý thuyết. Đây là hướng dẫn thực chiến:
@@ -31,6 +39,13 @@ Bài này không phải overview lý thuyết. Đây là hướng dẫn thực c
 ---
 
 ## Prerequisites — Chuẩn Bị Trước Khi Bắt Đầu
+
+![Minh họa 0](./thumb_7BPupSVUDFc.jpg)
+
+
+
+
+
 
 Trước khi vào bước đầu tiên, đảm bảo bạn đã có:
 
@@ -54,6 +69,12 @@ Nếu bạn muốn "làm sống" một ảnh cụ thể, chuẩn bị file ảnh
 ---
 
 ## Steps
+
+![Minh họa 1](./thumb_p3SxU46DpDg.jpg)
+
+
+
+
 
 ### Bước 1: Đăng Nhập & Vào Giao Diện Tạo Video Kling
 
@@ -205,6 +226,12 @@ Dựa trên checklist bước 5, điều chỉnh theo nguyên tắc này:
 
 ## Kết Quả Mong Đợi
 
+![Minh họa 2](./thumb_ZEAnYnH8hSo.jpg)
+
+
+
+
+
 Khi bạn làm đúng, video Kling sẽ trông như thế này:
 
 **Về chất lượng hình ảnh:**
@@ -228,7 +255,30 @@ Khi bạn làm đúng, video Kling sẽ trông như thế này:
 
 ---
 
+## 📈 Case Study: Lập Kênh TikTok Về Đời Sống Với Kling AI Mà Không Lộ Mặt
+
+![Minh họa 3](./thumb_XBWgLgVmd4Y.jpg)
+
+
+
+Một bạn Creator muốn làm kênh Podcast kể chuyện đời sống nhưng ngại việc setup máy quay:
+- **Pain Point:** Mất quá nhiều thời gian makeup, setup đèn, quay hỏng phải quay lại.
+- **Giải Pháp:** Thu âm giọng nói bằng điện thoại như bình thường. Phần hình ảnh, dùng Kling AI bản 2.6 với các đoạn prompt ngắn tạo bối cảnh lofi: *"A cozy bedroom with rain outside the window, warm lamp light, steaming coffee cup, slow motion, cinematic"*. 
+- **Kết Quả & ROI:** Mỗi tập Podcast 3 phút cần khoảng 10 video ghép lại. Chi phí credit trên tramsangtao.com cực rẻ so với việc mua thiết bị quay chụp. Bạn ấy có thể sản xuất 3 tập Podcast một tuần và đạt 100k Subs TikTok chỉ sau 2 tháng nhờ hình ảnh cực "chill" và giữ chân người xem tốt.
+
+---
+
+## 💎 Pro-Tips: Tiết Kiệm Credit Bằng Tính Năng "Negative Prompt"
+
+Nhiều người bỏ qua ô **Negative Prompt** (những gì không muốn xuất hiện). Việc này khiến Kling 3.0 thêm vào các vật thể lạ làm hỏng khung hình. Thói quen tốt nhất là luôn paste sẵn cụm này vào ô Negative trước khi render: 
+*“text, watermark, deformed, ugly, bad anatomy, bad lighting, low resolution, multiple focus”*
+Chỉ một giây copy-paste sẽ giúp bạn tránh được tỉ lệ hư video đến 30%, tương đương với việc tiết kiệm được rất nhiều tiền credit.
+
+---
+
 ## Troubleshooting — 3 Lỗi Phổ Biến Nhất
+
+
 
 ### Lỗi 1: Video ra đúng cảnh nhưng nhân vật bị biến dạng mặt / tay thừa
 
@@ -239,4 +289,30 @@ Khi bạn làm đúng, video Kling sẽ trông như thế này:
 **Fix:**
 1. Rút ngắn clip xuống 5 giây
 2. Thêm mô tả cụ thể về khuôn mặt vào đầu prompt: `close-up of face: oval face, single eyelid, natural makeup`
-3. Tốt nhất: dù
+3. Tốt nhất: Dùng tính năng Image-to-Video. Upload một tấm ảnh người mẫu chuẩn xác, Kling sẽ bám sát khuôn mặt đó trong suốt video.
+
+---
+
+### Lỗi 2: Video bị đứng yên hoặc chuyển động quá nhẹ (như ảnh bay bay)
+
+**Triệu chứng:** Prompt viết dài nhưng kết quả chả khác gì hình nền tĩnh.
+
+**Nguyên nhân:** AI chưa nhận diện được đâu là chủ thể cần tạo động lực (motion). 
+
+**Fix:** Thêm các Action verbs (động từ hành động) mạnh mẽ: *"running fast, violently shaking, rapid zoom in, dynamic camera pan"*. Camera Movement là thứ dễ tạo cảm giác chuyển động nhất.
+
+---
+
+### Lỗi 3: Ánh sáng thay đổi chớp nhoáng (Flickering)
+
+**Triệu chứng:** Clip 5 giây mà trời lúc sáng lúc tối chớp nháy liên tục.
+
+**Nguyên nhân:** Mô tả thời gian không rõ ràng khiển AI bị lú. 
+
+**Fix:** Thêm chốt thời gian cụ thể vào cuối prompt: *"static noon sunlight"* hoặc *"consistent moody dark lighting"*. 
+
+---
+
+## Bắt Đầu Ngay Nào!
+
+Trên đây là tất cả hành trang bạn cần để có được chiếc video AI xịn sò đầu tiên. Đừng đọc thêm lý thuyết nữa, mở ngay **[tramsangtao.com](https://tramsangtao.com/kling)** lên, nhập prompt đầu tiên và xem AI làm kỹ xảo điện ảnh cho bạn nhé!

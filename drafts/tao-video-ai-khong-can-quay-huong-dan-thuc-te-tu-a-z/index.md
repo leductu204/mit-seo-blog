@@ -20,6 +20,14 @@ status: draft
 
 ## Tại Sao Lại Không Quay?
 
+<iframe width="100%" class="aspect-video mt-4 mb-8 rounded-lg shadow-lg" src="https://www.youtube.com/embed/bIgtrveSh1M" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
 Câu hỏi thực tế hơn là: *Tại sao vẫn còn người bỏ tiền thuê ekip quay khi chưa biết video đó có convert không?*
 
 Làm affiliate, content creator, hay marketer — bạn cần test nhanh. Một video quay truyền thống mất 1–2 ngày, chi phí vài triệu, xong rồi mới biết nó có ăn hay không. Với AI, bạn test 5 concept khác nhau trong cùng buổi sáng, giữ lại cái nào chạy tốt, rồi mới đổ ngân sách vào.
@@ -29,6 +37,13 @@ Làm affiliate, content creator, hay marketer — bạn cần test nhanh. Một 
 ---
 
 ## Prerequisites — Chuẩn Bị Trước Khi Làm
+
+![Minh họa 0](./thumb_qaMnFdrWoTA.jpg)
+
+
+
+
+
 
 Trước khi bắt đầu, đảm bảo bạn có đủ những thứ này:
 
@@ -43,6 +58,12 @@ Trước khi bắt đầu, đảm bảo bạn có đủ những thứ này:
 ---
 
 ## Các Bước Thực Hiện
+
+![Minh họa 1](./thumb_Kf_ZCXkOlXY.jpg)
+
+
+
+
 
 ### Bước 1 — Xác Định Loại Video Bạn Cần
 
@@ -160,6 +181,12 @@ Khi xem lại video, check các điểm này theo thứ tự:
 
 ## Kết Quả Mong Đợi Khi Làm Đúng
 
+![Minh họa 2](./thumb_COD3kVZuV5c.jpg)
+
+
+
+
+
 Nếu bạn đi đúng quy trình, video cuối cùng sẽ:
 
 - **Có chuyển động mượt**, không bị giật frame hoặc vật thể biến dạng rõ ràng
@@ -172,6 +199,12 @@ Nếu bạn đi đúng quy trình, video cuối cùng sẽ:
 ---
 
 ## Troubleshooting — 3 Lỗi Hay Gặp
+
+![Minh họa 3](./thumb_LUF56HURU5c.jpg)
+
+
+
+
 
 ### ❌ Lỗi 1: Nhân vật bị biến dạng giữa video (tay 6 ngón, mặt thay đổi)
 
@@ -201,4 +234,32 @@ Nếu bạn đi đúng quy trình, video cuối cùng sẽ:
 
 **Fix:**
 - Check lại setting output trước khi generate — đảm bảo chọn đúng resolution
-- Generate lại vào giờ thấp điểm (sáng sớm, đ
+- Generate lại vào giờ thấp điểm (sáng sớm, đêm khuya) — server ít tải, output thường tốt hơn
+- Nếu vẫn bị mờ: thử chuyển sang model khác cho cùng prompt. Kling 3.0 thường cho kết quả sắc nét hơn 2.5 rõ rệt
+
+---
+
+## 📈 Case Study: Marketer 1 Người Tạo 30 Video Ads Trong 1 Tuần
+
+Một marketer freelance chạy quảng cáo Facebook cho 5 thương hiệu mỹ phẩm cùng lúc:
+- **Pain Point:** Mỗi brand cần 5-6 creative video mỗi tuần để test. Tổng 30 video/tuần. Thuê team quay dựng bất khả thi về cả thời gian lẫn chi phí.
+- **Giải Pháp:** Workflow chuẩn hóa trên tramsangtao.com: Nhận ảnh sản phẩm từ brand → FLUX tạo lifestyle mockup → Kling 2.5 test animate (3 biến thể/sản phẩm) → Chọn biến thể tốt nhất → Kling 3.0 render final → CapCut thêm text + nhạc. Mỗi video mất 15-20 phút.
+- **Kết Quả & ROI:** 30 video/tuần hoàn thành trong 2 ngày làm việc. ROAS quảng cáo tăng 35% nhờ có nhiều creative để test (so với trước chỉ có 2-3 video/brand/tuần). Chi phí credit tramsangtao khoảng 1.5 triệu/tháng, nhưng tiết kiệm được 15-20 triệu tiền thuê quay.
+
+---
+
+## 💎 Pro-Tips: Workflow "Ngày Thứ Hai" — Khi Đã Quen
+
+Sau khi chạy workflow lần đầu, đây là cách tối ưu từ lần thứ hai trở đi:
+1. **Batch generate:** Thay vì làm từng video một, chuẩn bị sẵn 5-10 prompt, submit hết một lúc rồi đi uống café. Quay lại review hàng loạt — nhanh hơn rất nhiều so với ngồi chờ từng clip.
+2. **"Last 2 seconds rule":** 2 giây cuối của mọi clip AI đều có xu hướng xuống chất lượng (bị blur, biến dạng nhẹ). Khi edit trong CapCut, luôn cắt bỏ 1-2 giây cuối — clip sẽ sạch sẽ hơn hẳn mà người xem không nhận ra.
+
+---
+
+## Kết
+
+Bạn không cần máy quay. Bạn không cần diễn viên. Bạn chỉ cần một ý tưởng rõ ràng, 20-40 phút, và [tramsangtao.com](https://tramsangtao.com).
+
+Quy trình đã có, tool đã sẵn, phần còn lại là bạn bắt tay vào làm. Video AI đầu tiên luôn thú vị hơn bạn nghĩ.
+
+Bắt đầu tại **[tramsangtao.com/pricing](https://tramsangtao.com/pricing)** — mất khoảng 10 phút setup, 20 phút cho video đầu tiên.

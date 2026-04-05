@@ -22,6 +22,14 @@ status: draft
 
 ## Tại Sao So Sánh Này Quan Trọng Ngay Lúc Này?
 
+<iframe width="100%" class="aspect-video mt-4 mb-8 rounded-lg shadow-lg" src="https://www.youtube.com/embed/rP2VsvuKe5k" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
 OpenAI đã khai tử Sora phiên bản gốc. Sora 2 ra đời nhưng theo Bloomberg, ngay trong tuần Sora bị đóng cửa, Kling AI đã ghi nhận lượng user tăng đột biến — người dùng "bỏ phiếu bằng chân."
 
 Nếu bạn đang làm affiliate, chạy ads, hay sản xuất content thường xuyên, câu hỏi không phải là *"tool nào hay hơn về mặt kỹ thuật?"* mà là **"tool nào đẻ ra tiền được?"**
@@ -31,6 +39,13 @@ Nếu bạn đang làm affiliate, chạy ads, hay sản xuất content thường
 ---
 
 ## 7 Điểm So Sánh Kling vs Sora
+
+![Minh họa 0](./thumb_ZEAnYnH8hSo.jpg)
+
+
+
+
+
 
 ---
 
@@ -116,7 +131,41 @@ Hơn nữa, trên tramsangtao.com bạn có thể dùng Kling 2.5/2.6/3.0 cùng 
 
 ---
 
+## ❓ FAQ — Sự Thật Về "Cú Lật Kèo" Của Sora
+
+![Minh họa 1](./thumb_7BPupSVUDFc.jpg)
+
+
+
+**1. Hiện tại (Năm 2025) tôi có thể mua tài khoản Sora 2 ở đâu?**
+Sự thật là: Hầu như không thể trừ khi bạn là Enterprise Partner. OpenAI có truyền thống "nhá hàng" bằng các PR stunt (như mời đạo diễn Hollywood trải nghiệm) nhưng rất chậm chạp trong việc mở Public API. Đừng tốn thời gian cố tìm người "bán tài khoản Sora", 99% trên thị trường VN hiện nay là Scam (lừa đảo). 
+
+**2. Tôi có nên chờ Sora 2 Public rồi mới học làm Video AI không?**
+Tuyệt đối không. Công nghệ cốt lõi của Video AI hiện tại nghiêng về kỹ năng **Prompting** và **Camera Control**. Nếu bạn thành thạo cách điều khiển Camera trên Kling ngay hôm nay, khi Sora 2 public, bạn chỉ mất 15 phút để làm quen nền tảng mới. Nếu bạn ngồi đợi, bạn đã chậm chân hơn đối thủ 1-2 năm kinh nghiệm.
+
+**3. Liệu Sora 2 có giết chết Kling AI không?**
+Khó. Kling đi theo chiến lược "Bottom-up" (bao phủ người dùng phổ thông, UI tiếng Trung/Anh cực kỳ dễ dùng, tối ưu tài nguyên phần cứng tốt để giá rẻ). OpenAI lại đi theo hướng "Top-down" (làm ra model đỉnh cao nhất, tốn kém nhất, phục vụ người dùng cao cấp). Thị trường quảng cáo (Ads) và Content Review luôn là mảnh đất màu mỡ của Kling.
+
+---
+
+## 💡 Pro-Tips: Lời Khuyên Dành Cho Các Agency Làm Dịch Vụ
+
+![Minh họa 2](./thumb_XBWgLgVmd4Y.jpg)
+
+
+
+1. **Sử Dụng Kling Làm Bản Demo (Animatic/Pre-viz):** Khi Pitching (gọi vốn/chào hàng) với đối tác, đừng tốn triệu đồng vào Runway hay Sora. Hãy dùng Kling gen nhanh 10 shot cảnh thô để đối tác hình dung kịch bản. Chốt kịch bản xong mới dùng tool xịn/đắt hơn để chốt Final.
+2. **Tận dụng lợi thế "Open" của thị trường Trung Quốc:** Các công cụ đến từ TQ (như Kling, Vidu, MiniMax, Jimeng) cập nhật cực kỳ hung hãn. Đừng trói buộc mình vào một Brand nào. Hãy dùng các Portal Pay-as-you-go.
+
+---
+
 ## Takeaway: Pattern Rút Ra Từ 7 Điểm Này
+
+![Minh họa 3](./thumb_p3SxU46DpDg.jpg)
+
+
+
+
 
 Có một pattern rõ ràng: **Sora được build để impress, Kling được build để dùng.**
 
@@ -128,8 +177,11 @@ Bài học lớn hơn: đừng chase hype. Sora từng là "model của năm." B
 
 ## 🚀 CTA: Thử Ngay Trên Tramsangtao.com
 
+
+
 Bạn không cần so sánh trên giấy nữa. Thử Kling 2.5, 2.6, hoặc 3.0 trực tiếp trên **[tramsangtao.com](https://tramsangtao.com)** — không cần credit card nước ngoài, không cần VPN.
 
 Nếu muốn so sánh thêm, Veo3 và Seedance 2.0 cũng có sẵn trên cùng nền tảng. Tạo cùng một prompt trên 3 model — 15 phút là bạn có kết luận thực tế hơn bất kỳ bài review nào.
 
 **Người trong nghề không tranh luận tool. Họ test.**
+
