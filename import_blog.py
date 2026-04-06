@@ -155,18 +155,18 @@ def replace_image_refs(content: str, folder: str, session: requests.Session, slu
     return new_content, cover_url
 
 
-def get_existing_slugs(session: requests.Session) -> set:
-    """Fetch all existing post slugs from admin API."""
+def get_existing_posts(session: requests.Session) -> dict:
+    """Fetch all existing posts from admin API. Returns {slug: id} map."""
     try:
         resp = session.get(f"{API_BASE}/api/admin/blog/posts")
         if resp.status_code == 200:
-            return {p["slug"] for p in resp.json().get("posts", [])}
+            return {p["slug"]: p["id"] for p in resp.json().get("posts", [])}
     except Exception as e:
         print(f"⚠ Failed to fetch existing posts: {e}")
-    return set()
+    return {}
 
 
-def import_folder(drafts_dir: str):
+def import_folder(drafts_dir: str, force: bool = False):
     if not ADMIN_TOKEN:
         print("ERROR: Set ADMIN_TOKEN env variable or edit the script.")
         print("  Get token: login to admin panel, check localStorage/cookie for admin token")
@@ -175,8 +175,12 @@ def import_folder(drafts_dir: str):
     session = requests.Session()
     session.headers["Authorization"] = f"Bearer {ADMIN_TOKEN}"
 
-    existing_slugs = get_existing_slugs(session)
-    print(f"Found {len(existing_slugs)} existing posts in DB\n")
+    existing_posts = get_existing_posts(session)
+    print(f"Found {len(existing_posts)} existing posts in DB")
+    if force:
+        print("⚡ FORCE mode: existing posts will be UPDATED\n")
+    else:
+        print()
 
     # Support both: single post folder (has index.md) or parent folder with subfolders
     single_index = os.path.join(drafts_dir, "index.md")
@@ -189,6 +193,7 @@ def import_folder(drafts_dir: str):
         return
 
     imported = 0
+    updated = 0
     skipped = 0
 
     for index_path in folders:
@@ -202,12 +207,14 @@ def import_folder(drafts_dir: str):
         slug = meta.get("slug", folder_name)
         title = meta.get("title", folder_name.replace("-", " ").title())
 
-        if slug in existing_slugs:
+        is_update = slug in existing_posts
+        if is_update and not force:
             print(f"⏭ Skip (exists): {slug}")
             skipped += 1
             continue
 
-        print(f"📝 Importing: {slug}")
+        action = "🔄 Updating" if is_update else "📝 Importing"
+        print(f"{action}: {slug}")
 
         # Upload images and replace refs
         body, cover_url = replace_image_refs(body, folder, session, slug=slug)
@@ -245,25 +252,39 @@ def import_folder(drafts_dir: str):
         # Remove None values
         post_data = {k: v for k, v in post_data.items() if v is not None}
 
-        resp = session.post(
-            f"{API_BASE}/api/admin/blog/posts",
-            json=post_data,
-        )
-
-        if resp.status_code == 200:
-            post_id = resp.json().get("id", "?")
-            print(f"  ✓ Created: id={post_id}, category={category}, read_time={read_time}min")
-            imported += 1
+        if is_update:
+            post_id = existing_posts[slug]
+            resp = session.put(
+                f"{API_BASE}/api/admin/blog/posts/{post_id}",
+                json=post_data,
+            )
+            if resp.status_code == 200:
+                print(f"  ✓ Updated: id={post_id}, category={category}")
+                updated += 1
+            else:
+                print(f"  ✗ Update failed: {resp.status_code} {resp.text[:200]}")
         else:
-            print(f"  ✗ Failed: {resp.status_code} {resp.text[:200]}")
+            resp = session.post(
+                f"{API_BASE}/api/admin/blog/posts",
+                json=post_data,
+            )
+            if resp.status_code == 200:
+                post_id = resp.json().get("id", "?")
+                print(f"  ✓ Created: id={post_id}, category={category}, read_time={read_time}min")
+                imported += 1
+            else:
+                print(f"  ✗ Failed: {resp.status_code} {resp.text[:200]}")
 
     print(f"\n{'='*40}")
-    print(f"Done: {imported} imported, {skipped} skipped")
+    print(f"Done: {imported} imported, {updated} updated, {skipped} skipped")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) >= 2:
-        path = sys.argv[1]
+    force = "--force" in sys.argv
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+
+    if args:
+        path = args[0]
     else:
         path = input("Folder path (single post or parent folder): ").strip()
         if not path:
@@ -274,4 +295,4 @@ if __name__ == "__main__":
         print(f"ERROR: '{path}' is not a valid directory.")
         sys.exit(1)
 
-    import_folder(path)
+    import_folder(path, force=force)

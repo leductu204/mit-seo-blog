@@ -62,10 +62,189 @@ Rút từ kinh nghiệm viết và augment 26 bài SEO (Phase 1→5). Dùng file
 - **BẮT BUỘC:** Phong cách **"Clean & Minimalist"** — tông màu pastel thanh lịch (trắng, beige/kem). Ánh sáng thiên về ban mai tự nhiên (soft morning light). Motif thường là: lifestyle bàn làm việc gọn gàng, sảnh văn phòng thoáng đãng, thiết bị tối giản. Định hướng phải trông sang trọng như các công ty công nghệ / Tech Blog lớn (The Verge, TechCrunch).
 - **CẤM KỴ:** Tuyệt đối KHÔNG prompt thêm hiệu ứng "công nghệ viễn tưởng", "neon lights", màu mè "xanh đỏ tím vàng", cyberpunk, holographic. Ảnh "công nghệ quá đà" mang lại tác dụng ngược ở thị trường Việt Nam năm 2026.
 
+### 🚨 Quy Tắc Chống Trùng Lặp Ảnh Cross-Post (Rút từ Incident 04/2026):
+
+**Bối cảnh:** Trong chiến dịch 26 bài Master Guide, hơn 15 bài bị dùng chung cùng 1 ảnh cover YouTube thumbnail và cùng 1 bộ screenshot UI → Google Image Search coi đây là near-duplicate content, giảm khả năng index ảnh và ảnh hưởng tiêu cực đến SEO.
+
+**Nguyên tắc vàng: MỖI BÀI VIẾT PHẢI CÓ BỘ ẢNH RIÊNG BIỆT 100%.**
+
+**Quy tắc cụ thể:**
+
+1. **Cover Image — KHÔNG BAO GIỜ trùng giữa 2 bài.**
+   - Mỗi bài phải có ảnh cover duy nhất, tạo riêng cho chủ đề đó.
+   - Nếu dùng YouTube thumbnail làm cover → mỗi bài phải dùng thumbnail từ video KHÁC nhau.
+   - Nếu dùng AI-generated cover → prompt phải khác nhau rõ rệt (khác composition, khác subject, khác màu chủ đạo).
+
+2. **Ảnh Inline (UI screenshot, product demo) — Giới hạn tái sử dụng tối đa 1 ảnh/3 bài.**
+   - Ảnh screenshot giao diện Trạm Sáng Tạo có thể dùng lại nếu context phù hợp, nhưng KHÔNG quá 1 lần dùng trong mỗi 3 bài liền kề.
+   - Ưu tiên crop/highlight vùng khác nhau của cùng UI nếu cần dùng lại (VD: bài A crop thanh sidebar, bài B crop khu vực chính).
+
+3. **Ảnh AI-Generated — Mỗi ảnh chỉ dùng cho ĐÚNG 1 bài.**
+   - Không bao giờ copy ảnh AI từ thư mục bài A sang bài B.
+   - Nếu 2 bài cùng topic (VD: Kling review + Kling tutorial), vẫn phải gen 2 ảnh riêng với prompt khác nhau.
+
+4. **YouTube Thumbnails — Ánh xạ 1:1 giữa video và bài.**
+   - Mỗi bài chỉ dùng thumbnail của video liên quan trực tiếp đến bài đó.
+   - KHÔNG dùng thumbnail của video "tổng hợp" cho tất cả bài trong cùng series.
+
+### Quy Trình Tìm/Tạo Ảnh Cho Mỗi Bài Viết Mới:
+
+**Bước 1 — Kiểm tra kho ảnh hiện có:**
+```bash
+# Liệt kê TẤT CẢ ảnh đang dùng trong toàn bộ drafts
+python -c "
+import os, re, glob, collections
+refs = collections.Counter()
+for f in glob.glob('drafts/*/index.md'):
+    with open(f, 'r', encoding='utf-8') as fh:
+        for m in re.findall(r'!\[[^\]]*\]\(\.?/?([^)]+)\)', fh.read()):
+            if not m.startswith('http'):
+                refs[m] += 1
+for name, count in refs.most_common():
+    if count > 1:
+        print(f'⚠ TRÙNG {count}x: {name}')
+"
+```
+
+**Bước 2 — Xác định loại ảnh cần cho bài mới:**
+
+| Slot | Nguồn ưu tiên | Fallback |
+| --- | --- | --- |
+| Cover | YouTube thumbnail riêng cho bài | AI-generated cover (prompt unique) |
+| Screenshot UI | Chụp trực tiếp tramsangtao.com vùng liên quan | Crop vùng khác từ screenshot chung |
+| Ảnh minh họa concept | Tải từ Unsplash/Pexels (free, commercial license) | AI-generated (Clean & Minimalist) |
+| Ảnh output/showcase | Tạo video/ảnh thật trên platform rồi screenshot | AI-generated showcase (`result_*.jpg`) |
+| Ảnh so sánh | Ghép 2-4 screenshot side-by-side | Infographic đơn giản bằng design tool |
+
+**Bước 3 — Tạo ảnh AI (nếu cần):**
+
+Khi dùng tool `generate_image` hoặc API tạo ảnh, PHẢI tuân thủ:
+
+- **Prompt phải chứa ít nhất 1 yếu tố unique** liên quan trực tiếp đến bài viết. VD:
+  - ✅ Bài về Kling → prompt chứa "video editing timeline with Vietnamese interface"
+  - ✅ Bài về Veo 3 → prompt chứa "Google AI studio with landscape preview"
+  - ❌ Cả 2 bài cùng dùng prompt "clean desk with laptop showing AI app" → trùng!
+
+- **Sau khi gen xong, đặt tên file theo pattern:**
+  - Cover: `cover.jpg` (unique per folder)
+  - AI concept: `{topic_keyword}_concept.jpg` (VD: `kling_pricing_concept.jpg`)
+  - Showcase: `result_{loai_output}.jpg` (VD: `result_fashion_tiktok.jpg`)
+
+- **Luôn compress ngay sau khi gen:** AI tool thường output PNG 2-5MB. Resize về 800px width, save JPEG quality 85 → dưới 200KB.
+
+**Bước 4 — Audit trước khi commit:**
+```bash
+# Chạy dedup check trước mỗi lần import
+python -c "
+import os, hashlib, glob
+hashes = {}
+for img in glob.glob('drafts/*/*.jpg') + glob.glob('drafts/*/*.png'):
+    h = hashlib.md5(open(img,'rb').read()).hexdigest()
+    if h in hashes:
+        print(f'⚠ DUPLICATE FILE: {img} == {hashes[h]}')
+    else:
+        hashes[h] = img
+print(f'Checked {len(hashes)} unique images')
+"
+```
+Nếu audit phát hiện duplicate → phải thay thế 1 trong 2 bằng ảnh mới trước khi chạy `import_blog.py`.
+
+### Nguồn Ảnh Miễn Phí Khuyến Nghị (Commercial License):
+
+| Nguồn | Loại ảnh | Lưu ý |
+| --- | --- | --- |
+| **Unsplash** | Lifestyle, workspace, tech | Miễn phí thương mại, không cần credit |
+| **Pexels** | Tương tự Unsplash | Miễn phí, search tiếng Anh cho kết quả tốt hơn |
+| **YouTube Thumbnails** | Screenshot video demo | Chỉ dùng thumbnail từ video official hoặc thuộc kênh mình |
+| **Trạm Sáng Tạo Platform** | Screenshot giao diện thực | Chụp trực tiếp, crop vùng liên quan, blur thông tin user |
+| **AI Generation** | Concept, abstract, infographic | Dùng `generate_image` tool — tuân thủ checklist phía trên |
+
+> **⛔ KHÔNG dùng:** Google Image Search random, Pinterest, ảnh có watermark, ảnh từ blog đối thủ (vi phạm copyright + Google phạt duplicate).
+
 ### Kỹ Thuật Tối Ưu (Technical SEO):
 - **Luôn resize/compress ảnh:** width dao động 600-800px. Nén Save for Web (JPEG/WebP) thay vì ảnh PNG AI > 2MB khổng lồ! Trọng lượng ảnh ép < 200KB.
 - **Tên file thân thiện:** Tên file chứa keyword theo chuẩn slug `ten-tool-tao-video.jpg`. Thay thế hoàn toàn tên rác kiểu `image_001.png`.
 - **Alt text:** Ảnh luôn có Alt text đúng ngữ nghĩa của đoạn văn, thay thế cho từ khóa nhồi nhét.
+
+### ⚠️ Quy Tắc Embed Ảnh Trong Markdown (Rút từ Incident 04/2026):
+
+**Format chuẩn duy nhất:**
+```markdown
+![Alt text mô tả nội dung ảnh](./ten-file.jpg)
+*Caption mô tả — nhấn mạnh USP hoặc pain point.*
+```
+
+**Quy tắc bắt buộc:**
+1. **Mọi ảnh reference phải tồn tại trong thư mục draft.** Trước khi commit, chạy audit script kiểm tra broken refs. Import script (`import_blog.py`) sẽ log `⚠ Image not found` nếu ảnh thiếu → ảnh bị mất trên production.
+2. **Không bao giờ reference ảnh chưa tải về.** Nếu cần thumbnail YouTube, tải về local trước (`thumb_{videoId}.jpg`), không dùng URL trực tiếp `img.youtube.com` trong markdown vì import script sẽ upload lên R2 CDN.
+3. **Mỗi ảnh trong bài phải unique.** Không dùng cùng 1 file ảnh cho 2 vị trí khác nhau trong cùng bài (gây confuse cho reader và lãng phí bandwidth).
+4. **Tên file không chứa ký tự đặc biệt.** Chỉ dùng `a-z`, `0-9`, `_`, `-`. Tránh dấu cách, dấu tiếng Việt trong tên file.
+
+### YouTube Thumbnail Management:
+
+Khi bài viết reference video YouTube (dạng click-to-play), thumbnail phải được tải về local:
+
+```python
+# Tải thumbnail YouTube về thư mục draft
+import urllib.request
+video_id = "VIDEO_ID"
+url = f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg"
+urllib.request.urlretrieve(url, f"./thumb_{video_id}.jpg")
+```
+
+**Lưu ý:**
+- Dùng `hqdefault.jpg` (480x360) — nhẹ, đủ chất lượng cho blog.
+- `maxresdefault.jpg` (1280x720) nặng hơn nhưng sắc nét hơn — chỉ dùng cho cover.
+- Luôn kiểm tra file size > 1KB sau khi tải (YouTube trả placeholder rỗng cho video không tồn tại).
+
+### Showcase Image (Ảnh Output/Kết Quả):
+
+Mỗi bài viết hướng dẫn/review **nên có 1 ảnh showcase** ở phần đầu (sau H2 đầu tiên hoặc cuối intro) để demo kết quả thực tế mà AI tool tạo ra. Quy tắc:
+
+- **Tên file bắt đầu bằng `result_`** để phân biệt với ảnh hướng dẫn: `result_cinematic_scene.jpg`, `result_product_video.jpg`.
+- **Alt text mô tả output cụ thể**, không generic: ✅ `"Phong cảnh Việt Nam qua AI — Veo 3 tạo chất lượng cinematic chuẩn phim"` — ❌ `"AI generated image"`.
+- **Không dùng chung 1 ảnh showcase cho nhiều bài.** Mỗi bài cần ảnh showcase riêng để tránh duplicate content signal từ Google Image Search.
+- Nếu không có ảnh output thực tế, dùng `generate_image` tool tạo ảnh minh họa theo phong cách Clean & Minimalist (xem checklist ở trên).
+
+### Encoding Safety (QUAN TRỌNG):
+
+File `.md` trong `drafts/` **BẮT BUỘC phải là UTF-8 (no BOM)**. Các lỗi encoding thường gặp:
+
+| Triệu chứng | Nguyên nhân | Fix |
+|---|---|---|
+| `CÃ¡ch DÃ¹ng` thay vì `Cách Dùng` | Double-encoded UTF-8 (UTF-8 bytes được encode lại thành UTF-8) | `pip install ftfy` rồi `ftfy.fix_text(content)` |
+| `C?ch D?ng` | File saved as ASCII/Latin-1 | Mở bằng editor, Save As → UTF-8 |
+| Tiêu đề hiển thị đúng local nhưng sai trên server | CRLF vs LF line ending conflict | `newline='\n'` khi write file bằng Python |
+
+**Phòng ngừa:** Khi viết script Python xử lý batch file `.md`, LUÔN dùng:
+```python
+with open(path, 'r', encoding='utf-8') as f:
+    content = f.read()
+# ... process ...
+with open(path, 'w', encoding='utf-8', newline='\n') as f:
+    f.write(content)
+```
+
+**KHÔNG BAO GIỜ** dùng regex replace trên byte stream hoặc `os.system()` để thao tác nội dung file — dễ gây mất newline, vỡ encoding.
+
+### Import Pipeline (`import_blog.py`):
+
+```bash
+# Import mới (skip bài đã tồn tại)
+python import_blog.py drafts
+
+# Force update tất cả (ghi đè bài đã import — dùng khi sửa lỗi encoding/ảnh)
+python import_blog.py drafts --force
+
+# Import 1 bài cụ thể
+python import_blog.py drafts/ten-bai-viet
+```
+
+**Checklist trước khi chạy import:**
+- [ ] `ADMIN_TOKEN` trong `.env` còn hạn (login admin panel lấy token mới nếu hết)
+- [ ] Chạy encoding audit: `python -c "import ftfy; ..."` để fix mojibake
+- [ ] Chạy image audit: kiểm tra 0 broken refs trước deploy
+- [ ] Ảnh đã compress < 200KB (script sẽ upload tất cả ảnh lên R2 CDN)
 
 ## 3.5. Video Embed — Tăng Dwell Time & Rich Snippet
 

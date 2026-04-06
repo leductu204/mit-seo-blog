@@ -486,6 +486,131 @@ async def batch_generate(
     print(f"Done: {ok}/{len(keywords)} succeeded")
     return results
 
+# ── Image Dedup ───────────────────────────────────────────────────────────────
+
+import hashlib
+import pathlib
+
+IMG_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
+
+
+def _hash_file(filepath: str) -> str:
+    """Fast MD5 hash of file contents."""
+    h = hashlib.md5()
+    with open(filepath, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def build_image_index(drafts_dir: str = "drafts") -> dict[str, list[str]]:
+    """Build {hash: [filepath, ...]} index of all images in drafts/."""
+    index = {}
+    drafts = pathlib.Path(drafts_dir)
+    for img in drafts.rglob("*"):
+        if img.suffix.lower() in IMG_EXTENSIONS and img.is_file():
+            h = _hash_file(str(img))
+            index.setdefault(h, []).append(str(img))
+    return index
+
+
+def check_image_duplicate(new_image_path: str, drafts_dir: str = "drafts") -> str | None:
+    """Check if a new image is a duplicate of any existing image.
+    Returns the path of the duplicate if found, None otherwise.
+    Use this before saving a new image to a draft folder.
+    """
+    new_hash = _hash_file(new_image_path)
+    drafts = pathlib.Path(drafts_dir)
+    for img in drafts.rglob("*"):
+        if img.suffix.lower() in IMG_EXTENSIONS and img.is_file():
+            if str(img) == new_image_path:
+                continue
+            if _hash_file(str(img)) == new_hash:
+                return str(img)
+    return None
+
+
+def find_cross_post_refs(drafts_dir: str = "drafts") -> dict[str, list[str]]:
+    """Find images referenced by multiple posts (same filename in different folders).
+    Returns {filename: [post1_slug, post2_slug, ...]}
+    """
+    ref_map = {}  # filename -> [slug, ...]
+    drafts = pathlib.Path(drafts_dir)
+    for md_file in drafts.glob("*/index.md"):
+        slug = md_file.parent.name
+        content = md_file.read_text(encoding="utf-8", errors="replace")
+        refs = re.findall(r'!\[[^\]]*\]\(\.?/?([^)]+)\)', content)
+        for ref in refs:
+            if ref.startswith("http"):
+                continue
+            ref_map.setdefault(ref, []).append(slug)
+    return {name: slugs for name, slugs in ref_map.items() if len(slugs) > 1}
+
+
+def audit_duplicates(drafts_dir: str = "drafts") -> dict:
+    """Full dedup audit. Returns report dict with:
+    - duplicate_files: identical files (same hash) in different folders
+    - cross_refs: same filename referenced by multiple posts
+    - stats: summary counts
+    """
+    print(f"🔍 Scanning images in {drafts_dir}/...\n")
+
+    # 1. Hash-based duplicates (identical file content)
+    index = build_image_index(drafts_dir)
+    duplicate_groups = {h: paths for h, paths in index.items() if len(paths) > 1}
+
+    if duplicate_groups:
+        print("⚠ DUPLICATE FILES (identical content, different locations):")
+        for h, paths in duplicate_groups.items():
+            print(f"  Hash {h[:8]}:")
+            for p in paths:
+                # Show relative path
+                rel = os.path.relpath(p, drafts_dir)
+                size_kb = os.path.getsize(p) // 1024
+                print(f"    → {rel} ({size_kb}KB)")
+        print()
+    else:
+        print("✓ No duplicate files found.\n")
+
+    # 2. Cross-post references (same filename used across posts)
+    cross_refs = find_cross_post_refs(drafts_dir)
+    if cross_refs:
+        print("⚠ CROSS-POST REFERENCES (same image name in multiple posts):")
+        for name, slugs in cross_refs.items():
+            print(f"  {name} → used in {len(slugs)} posts:")
+            for s in slugs:
+                print(f"    → {s}")
+        print()
+    else:
+        print("✓ No cross-post image references.\n")
+
+    # 3. Stats
+    total_images = sum(len(paths) for paths in index.values())
+    unique_images = len(index)
+    dup_count = sum(len(paths) - 1 for paths in duplicate_groups.values())
+
+    print(f"{'='*40}")
+    print(f"Total images: {total_images}")
+    print(f"Unique images: {unique_images}")
+    print(f"Duplicate files: {dup_count}")
+    print(f"Cross-post refs: {len(cross_refs)}")
+
+    if dup_count == 0 and len(cross_refs) == 0:
+        print("🎉 All clear — no duplicates detected!")
+    else:
+        print(f"\n💡 Fix: Replace duplicates with unique images before running import_blog.py")
+
+    return {
+        "duplicate_files": duplicate_groups,
+        "cross_refs": cross_refs,
+        "stats": {
+            "total": total_images,
+            "unique": unique_images,
+            "duplicates": dup_count,
+            "cross_refs": len(cross_refs),
+        },
+    }
+
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
@@ -503,11 +628,16 @@ if __name__ == "__main__":
     parser.add_argument("--no-publish", action="store_true",
                         help="Gen only, don't push to blog API")
     parser.add_argument("--cta",    default="/pricing", help="CTA page path")
+    parser.add_argument("--dedup",  action="store_true",
+                        help="Audit all draft images for duplicates (no generation)")
+    parser.add_argument("--dedup-dir", default="drafts", metavar="DIR",
+                        help="Directory to scan for dedup (default: drafts)")
     args = parser.parse_args()
 
-    publish = not args.no_publish
-
-    if args.batch:
+    if args.dedup:
+        audit_duplicates(args.dedup_dir)
+    elif args.batch:
+        publish = not args.no_publish
         with open(args.batch) as f:
             keywords = [l.strip() for l in f if l.strip() and not l.startswith("#")]
         asyncio.run(batch_generate(
@@ -515,9 +645,11 @@ if __name__ == "__main__":
             status=args.status, publish=publish, multi=args.multi
         ))
     elif args.keyword:
+        publish = not args.no_publish
         asyncio.run(generate_post(
             args.keyword, mode=args.mode, fmt=args.fmt, tone=args.tone,
             cta_page=args.cta, status=args.status, publish=publish, multi=args.multi
         ))
     else:
         parser.print_help()
+
