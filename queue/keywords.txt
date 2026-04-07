@@ -200,3 +200,39 @@ làm series video AI nhất quán nhân vật
 tạo video AI giữ nguyên nhân vật xuyên suốt
 làm video AI nhiều cảnh liên tục
 cách giữ nhân vật đồng nhất trong video AI
+
+# ============================================================
+# KEYWORDS MỚI ĐÃ LỌC (2026-04-07)
+# Ưu tiên: intent thương mại + model mới + pain points VN
+# ============================================================
+
+# Use case thương mại (Affiliate/TikTok Shop)
+tạo video review sản phẩm bằng AI không cần quay
+làm video TikTok Shop bằng AI không lộ mặt
+tự động tạo video sản phẩm hàng loạt bằng AI
+tạo video từ link Shopee bằng AI
+tạo video quảng cáo sản phẩm bằng AI từ 1 ảnh
+
+# Model/feature mới
+seedream 5 là gì hướng dẫn tiếng việt
+nano banana 2 là gì hướng dẫn
+so sánh seedance 2.0 vs kling 3.0
+cách tải video seedance 2.0 không logo không watermark
+tải video jimeng không logo về điện thoại máy tính
+
+# Pain points thanh toán/tài khoản
+dùng kling ai không cần thẻ quốc tế thanh toán momo
+
+# Ngách đang hot tại VN
+tạo KOL ảo bán hàng bằng AI 2026
+tạo ảnh AI có chữ tiếng Việt chuẩn
+cách tạo video em bé nhảy AI từ ảnh
+cách tạo video AI nhảy bắt nhạc 2026
+cách viết prompt tạo ảnh AI tiếng Việt cho FLUX Nano Banana
+
+# Loại bỏ do cạnh tranh cao/bão hòa:
+# - seedance 2.0 là gì
+# - nano banana pro là gì
+# - phục chế ảnh cũ bằng AI
+# - tạo infographic bằng AI
+# - tạo ảnh chân dung AI đẹp 5 giây
